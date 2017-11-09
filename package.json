@@ -1,0 +1,24 @@
+{
+  "name": "twitterminal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/ts-mocha ./src/test/*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/mocha": "^2.2.44",
+    "@types/node": "^8.0.50",
+    "mocha": "^4.0.1",
+    "ts-mocha": "^1.0.3",
+    "typescript": "^2.6.1"
+  },
+  "dependencies": {
+    "@types/lodash.find": "^4.6.3",
+    "lodash.find": "^4.6.0",
+    "moment": "^2.19.1"
+  }
+}
