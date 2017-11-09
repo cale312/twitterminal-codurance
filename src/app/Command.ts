@@ -4,7 +4,7 @@ import { UserRepository } from "../database/UserRepository";
 export abstract class Command {
     protected successor: Command;
 
-    abstract canExecute(
+    abstract checkIfCanExecute(
         input: SentenceInterface,
         userRepository: UserRepository,
     ): string;
@@ -15,7 +15,7 @@ export abstract class Command {
 
     next(input: SentenceInterface, userRepository: UserRepository) {
         if (this.successor) {
-            this.successor.canExecute(input, userRepository);
+            this.successor.checkIfCanExecute(input, userRepository);
         }
     }
 }

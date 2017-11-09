@@ -7,7 +7,7 @@ import { UserRepository } from "../database/UserRepository";
 import { SentenceInterface } from "./SentenceInterface";
 
 export class PostCommand extends Command {
-    canExecute(input: SentenceInterface, userRepository: UserRepository): string {
+    checkIfCanExecute(input: SentenceInterface, userRepository: UserRepository): string {
         if (input.verb === '->') {
             let user = userRepository.find({ name: input.subject });
 

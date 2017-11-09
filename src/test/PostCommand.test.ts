@@ -15,7 +15,7 @@ describe("The PostCommand class", () => {
 
         let postCommand = new PostCommand();
 
-        postCommand.canExecute(input, userRepository);
+        postCommand.checkIfCanExecute(input, userRepository);
 
         assert.equal(userRepository.find({ name: "Sandro" }).name, "Sandro");
     })

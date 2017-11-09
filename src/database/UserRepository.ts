@@ -2,8 +2,9 @@ import * as find from "lodash.find";
 
 import { Database } from "./Database";
 import { User } from "../app/User";
+import { IRepository } from "./IRepository";
 
-export class UserRepository extends Database {
+export class UserRepository extends Database implements IRepository {
     constructor() {
         super();
     }
