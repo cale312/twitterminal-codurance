@@ -5,6 +5,7 @@ import { UserRepository } from "../database/UserRepository";
 import { PostCommand } from "../app/PostCommand";
 import { Database } from "../database/Database";
 import { PostRepository } from "../app/PostRepository";
+import { ReadCommand } from "../app/ReadCommand";
 
 describe("The Twitterminal Class", () => {
 
@@ -48,8 +49,8 @@ describe("The Twitterminal Class", () => {
 
     it(`should display the User's timeline when the input command's subject is only a user name`, () => {
         let database = new Database();
-        let userRepository = new UserRepository();
-        let postRepository = new PostRepository();
+        let userRepository = new UserRepository(database);
+        let postRepository = new PostRepository(database);
         let postCommand = new PostCommand();
         let readCommand = new ReadCommand();
 

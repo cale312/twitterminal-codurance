@@ -4,13 +4,15 @@ import { User } from "./User";
 import { Post } from "./Post";
 import { Command } from "./Command";
 
-import { UserRepository } from "../database/UserRepository";
-import { PostRepository } from "./PostRepository";
-
 import { ISentence } from "./ISentence";
+import { IRepository } from "../database/IRepository";
 
 export class PostCommand extends Command {
-    checkIfCanExecute(input: ISentence, userRepository: UserRepository, postRepository: PostRepository): string {
+    constructor() {
+        super();
+    }
+
+    checkIfCanExecute(input: ISentence, userRepository: IRepository, postRepository: IRepository): string {
         if (input.verb === '->') {
             let user = userRepository.findOne({ name: input.subject });
 
