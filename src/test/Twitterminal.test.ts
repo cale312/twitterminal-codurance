@@ -3,17 +3,22 @@ import * as assert from "assert";
 import { Twitterminal } from "../app/Twitterminal";
 import { UserRepository } from "../database/UserRepository";
 import { PostCommand } from "../app/PostCommand";
+import { Database } from "../database/Database";
+import { PostRepository } from "../app/PostRepository";
 
 describe("The Twitterminal Class", () => {
 
     it(`should create a User when the input from the console is in the format of 'username -> hello!'`, () => {
-        let userRepository = new UserRepository();
+        let database = new Database();
+        let userRepository = new UserRepository(database);
+        let postRepository = new PostRepository(database);
+
         let postCommand = new PostCommand();
         let availableCommands = [
             postCommand
         ];
 
-        let twitterminal = new Twitterminal(availableCommands, userRepository);
+        let twitterminal = new Twitterminal(availableCommands, userRepository, postRepository);
 
         twitterminal.handleInput("Sandro -> This is first post!");
 
@@ -21,9 +26,11 @@ describe("The Twitterminal Class", () => {
     });
 
     it(`should save a Post to a User when the input command's 'verb' is '->'`, () => {
-        let userRepository = new UserRepository();
-        let postRepository = new PostRepository();
+        let database = new Database();
+        let userRepository = new UserRepository(database);
+        let postRepository = new PostRepository(database);
         let postCommand = new PostCommand();
+
         let availableCommands = [
             postCommand
         ];
@@ -33,9 +40,9 @@ describe("The Twitterminal Class", () => {
         twitterminal.handleInput("Sandro -> This is my first post!");
         twitterminal.handleInput("Sandro -> This is my second post...");
 
-        assert.equal(userRepository.findOne({ name: "Sandro" }).posts.map(post => post.text), [
-            "This is my second post...",
-            "This is my first post!"
+        assert.deepEqual(userRepository.findOne({ name: "Sandro" }).posts.map(post => post.text), [
+            "This is my first post!",
+            "This is my second post..."
         ])
     });
 });

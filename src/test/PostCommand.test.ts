@@ -1,6 +1,8 @@
 import * as assert from "assert";
 import { PostCommand } from "../app/PostCommand";
 import { UserRepository } from "../database/UserRepository";
+import { Database } from "../database/Database";
+import { PostRepository } from "../app/PostRepository";
 
 describe("The PostCommand class", () => {
 
@@ -11,11 +13,13 @@ describe("The PostCommand class", () => {
             object: "This is my first post!"
         };
 
-        let userRepository = new UserRepository();
+        let database = new Database();
+        let userRepository = new UserRepository(database);
+        let postRepository = new PostRepository(database);
 
         let postCommand = new PostCommand();
 
-        postCommand.checkIfCanExecute(input, userRepository);
+        postCommand.checkIfCanExecute(input, userRepository, postRepository);
 
         assert.equal(userRepository.findOne({ name: "Sandro" }).name, "Sandro");
     })

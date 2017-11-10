@@ -1,24 +1,28 @@
 import * as find from "lodash.find";
 import * as filter from "lodash.filter";
+import * as flattenDeep from "lodash.flattendeep";
 
 import { Database } from "../database/Database";
 import { IRepository } from "../database/IRepository";
+import { Post } from "./Post";
+import { User } from "./User";
 
-export class PostRepository extends Database implements IRepository {
-    constructor() {
-        super();
+export class PostRepository implements IRepository {
+    database: Database;
+
+    constructor(database: Database) {
+        this.database = database;
     }
 
     allPosts(): Array<Post> {
-        return this.db.map(user => user.posts);
+        return flattenDeep(this.database.data.map((user: User) => user.posts));
     }
 
     store(post: Post): string {
         try {
-            post.author.post(post);
-            return `Post has been saved to ${post.author.name}'s account.`;
+            return find(this.database.data, user => user.name === post.author).post(post);
         } catch {
-            return "Error, could not save the post to the user.";
+            return `Error, could not save Post to ${post.author.name}`;
         }
     }
 

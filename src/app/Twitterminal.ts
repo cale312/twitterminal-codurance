@@ -3,12 +3,14 @@ import { Command } from "./Command";
 import { ISentence } from "./ISentence";
 
 export class Twitterminal {
-    protected userRepository: IRepository;
     protected availableCommands: Array<Command>;
+    protected userRepository: IRepository;
+    protected postRepository: IRepository;
 
-    constructor(availableCommands: Array<Command>, userRepository: IRepository) {
-        this.userRepository = userRepository;
+    constructor(availableCommands: Array<Command>, userRepository: IRepository, postRepository: IRepository) {
         this.availableCommands = availableCommands;
+        this.userRepository = userRepository;
+        this.postRepository = postRepository;
     }
 
     private setSuccessors(availableCommands: Array<Command>): void {
@@ -30,7 +32,7 @@ export class Twitterminal {
         return {
             subject: inputAsArray[0],
             verb: inputAsArray[1],
-            object: inputAsArray[2]
+            object: inputAsArray.slice(2).join(" ")
         }
     }
 
@@ -40,6 +42,6 @@ export class Twitterminal {
         let sentence = this.inputAsSentence(input);
         let firstCommand = this.availableCommands[0];
 
-        console.log(firstCommand.checkIfCanExecute(sentence, this.userRepository));
+        firstCommand.checkIfCanExecute(sentence, this.userRepository, this.postRepository);
     }
 }
