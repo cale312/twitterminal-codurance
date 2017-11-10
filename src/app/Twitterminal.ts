@@ -1,7 +1,6 @@
 import { IRepository } from "../database/IRepository";
 import { Command } from "./Command";
-import { SentenceInterface } from "./SentenceInterface";
-import { PostCommand } from "./PostCommand";
+import { ISentence } from "./ISentence";
 
 export class Twitterminal {
     protected userRepository: IRepository;
@@ -13,7 +12,7 @@ export class Twitterminal {
     }
 
     private setSuccessors(availableCommands: Array<Command>): void {
-        this.availableCommands.forEach(command, index => {
+        this.availableCommands.forEach((command, index) => {
             let nextCommand = availableCommands[index + 1];
 
             if (nextCommand) {
@@ -22,20 +21,25 @@ export class Twitterminal {
         })
     }
 
-    private inputAsObject(input: string): SentenceInterface {
-        input = input.split(" ");
+    // A Sentence Object is a user input string that has been deconstructed into a sentence composed of a
+    // subject, verb and an object.
+
+    private inputAsSentence(input: string): ISentence {
+        let inputAsArray = input.split(" ");
 
         return {
-            subject: input[0],
-            verb: input[1],
-            object: input[2]
+            subject: inputAsArray[0],
+            verb: inputAsArray[1],
+            object: inputAsArray[2]
         }
     }
 
     handleInput(input: string): string {
-        let input = this.inputAsObject(input);
+        this.setSuccessors(this.availableCommands);
+
+        let sentence = this.inputAsSentence(input);
         let firstCommand = this.availableCommands[0];
 
-        firstCommand.checkIfCanExecute(input, this.userRepository);
+        console.log(firstCommand.checkIfCanExecute(sentence, this.userRepository));
     }
 }

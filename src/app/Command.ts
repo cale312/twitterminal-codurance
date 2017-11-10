@@ -1,11 +1,11 @@
-import { SentenceInterface } from "./SentenceInterface";
+import { ISentence } from "./ISentence";
 import { UserRepository } from "../database/UserRepository";
 
 export abstract class Command {
     protected successor: Command;
 
     abstract checkIfCanExecute(
-        input: SentenceInterface,
+        input: ISentence,
         userRepository: UserRepository,
     ): string;
 
@@ -13,7 +13,7 @@ export abstract class Command {
         this.successor = successor;
     }
 
-    next(input: SentenceInterface, userRepository: UserRepository) {
+    next(input: ISentence, userRepository: UserRepository) {
         if (this.successor) {
             this.successor.checkIfCanExecute(input, userRepository);
         }

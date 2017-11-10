@@ -4,15 +4,16 @@ import { User } from "./User";
 import { Command } from "./Command";
 import { UserRepository } from "../database/UserRepository";
 
-import { SentenceInterface } from "./SentenceInterface";
+import { ISentence } from "./ISentence";
 
 export class PostCommand extends Command {
-    checkIfCanExecute(input: SentenceInterface, userRepository: UserRepository): string {
+    checkIfCanExecute(input: ISentence, userRepository: UserRepository): string {
         if (input.verb === '->') {
-            let user = userRepository.find({ name: input.subject });
+            let user = userRepository.findOne({ name: input.subject });
 
             if (! user) {
-                user = userRepository.store(new User(input.subject))
+                user = new User(input.subject);
+                userRepository.store(user);
             }
 
             // return postRepository.store(user, new Post({ text: input.object, createdAt: moment() }));
