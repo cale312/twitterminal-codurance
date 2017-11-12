@@ -7,6 +7,7 @@ import { Database } from "../database/Database";
 import { PostRepository } from "../app/PostRepository";
 import { ReadCommand } from "../app/ReadCommand";
 import { Timeline } from "../app/Timeline";
+import { FollowCommand } from "../app/FollowCommand";
 
 describe("The Twitterminal Class", () => {
 
@@ -72,6 +73,35 @@ describe("The Twitterminal Class", () => {
         assert.deepEqual(sandroTimeline.posts, [
             "This is my first post! (a few seconds ago)",
             "This is my second post! (a few seconds ago)"
+        ]);
+    });
+
+    it("should add a User to another User's subscriptions list when the input verb is 'follow'", () => {
+        let database = new Database();
+        let userRepository = new UserRepository(database);
+        let postRepository = new PostRepository(database);
+        let postCommand = new PostCommand();
+        let readCommand = new ReadCommand();
+        let followCommand = new FollowCommand();
+
+        let availableCommands = [
+            postCommand,
+            readCommand,
+            followCommand
+        ];
+
+        let twitterminal = new Twitterminal(availableCommands, userRepository, postRepository);
+
+        twitterminal.handleInput("Sandro -> First post");
+        twitterminal.handleInput("Andre -> First post");
+        twitterminal.handleInput("Charne -> First post");
+
+        twitterminal.handleInput("Sandro follows Andre");
+        twitterminal.handleInput("Sandro follows Charne");
+
+        assert.deepEqual(userRepository.findOne({ name: "Sandro" }).subscribedTo, [
+            "Andre",
+            "Charne"
         ]);
     });
 });

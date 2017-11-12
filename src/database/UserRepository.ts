@@ -17,6 +17,6 @@ export class UserRepository implements IRepository {
     }
 
     findOne(query): User | undefined {
-        return find(this.database.data, user => query);
+        return find(this.database.data, query);
     }
 }

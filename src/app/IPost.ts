@@ -1,9 +1,7 @@
-import * as moment from "moment";
-
-import { User } from "./User";
+import { Moment } from "moment";
 
 export interface IPost {
     text: string,
     author: string,
-    createdAt: moment
+    createdAt: Moment
 }

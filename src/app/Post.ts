@@ -1,12 +1,10 @@
-import * as moment from "moment";
-
-import { User } from "./User";
 import { IPost } from "./IPost";
+import { Moment } from "moment";
 
 export class Post {
     private _text: string;
-    private _author: User;
-    private _createdAt: moment;
+    private _author: string;
+    private _createdAt: Moment;
 
     constructor(post: IPost) {
         this._text = post.text;
@@ -18,11 +16,11 @@ export class Post {
         return this._text;
     }
 
-    get author(): User {
+    get author(): string {
         return this._author;
     }
 
-    get createdAt(): moment {
+    get createdAt(): Moment {
         return this._createdAt;
     }
 }

@@ -21,19 +21,17 @@ describe("The PostRepository class", () => {
         userRepository.store(user);
         userRepository.store(anotherUser);
 
-        // let posts = [
-            assert.equal(postRepository.store(new Post({
-                text: "This is my first post!",
-                author: anotherUser.name,
-                createdAt: moment("2012-12-12 09:12:26")
-            })), `Post has been saved to Andre's account.`)
-            assert.equal(postRepository.store(new Post({
-                text: "This is my first post!",
-                author: user.name,
-                createdAt: moment("2012-12-12 09:30:26")
-            })), `Post has been saved to Sandro's account.`);
-        // ];
-        
+        assert.equal(postRepository.store(new Post({
+            text: "This is my first post!",
+            author: anotherUser.name,
+            createdAt: moment("2012-12-12 09:12:26")
+        })), `Post has been saved to Andre's account.`)
+        assert.equal(postRepository.store(new Post({
+            text: "This is my first post!",
+            author: user.name,
+            createdAt: moment("2012-12-12 09:30:26")
+        })), `Post has been saved to Sandro's account.`);
+
         let firstPost = postRepository.findOne({ author: "Andre" });
 
         assert.equal(firstPost.text, "This is my first post!");
