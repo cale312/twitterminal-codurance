@@ -1,6 +1,7 @@
 import { Command } from "./Command";
 import { ISentence } from "./ISentence";
 import { IRepository } from "../database/IRepository";
+import { Timeline } from "./Timeline";
 
 export class ReadCommand extends Command {
     constructor() {

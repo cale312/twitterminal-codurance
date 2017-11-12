@@ -12,7 +12,7 @@ export class PostCommand extends Command {
         super();
     }
 
-    checkIfCanExecute(input: ISentence, userRepository: IRepository, postRepository: IRepository): string {
+    checkIfCanExecute(input: ISentence, userRepository: IRepository, postRepository: IRepository): string | void {
         if (input.verb === '->') {
             let user = userRepository.findOne({ name: input.subject });
 

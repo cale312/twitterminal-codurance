@@ -30,7 +30,7 @@ export class PostRepository implements IRepository {
         return filter(this.allPosts(), post => query);
     }
 
-    findOne(query): Post {
+    findOne(query): Post | undefined {
         return find(this.allPosts(), post => query);
     }
 }

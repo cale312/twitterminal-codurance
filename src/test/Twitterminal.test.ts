@@ -6,6 +6,7 @@ import { PostCommand } from "../app/PostCommand";
 import { Database } from "../database/Database";
 import { PostRepository } from "../app/PostRepository";
 import { ReadCommand } from "../app/ReadCommand";
+import { Timeline } from "../app/Timeline";
 
 describe("The Twitterminal Class", () => {
 
@@ -63,10 +64,14 @@ describe("The Twitterminal Class", () => {
 
         twitterminal.handleInput("Sandro -> This is my first post!");
         twitterminal.handleInput("Sandro -> This is my second post!");
+        twitterminal.handleInput("Sandro");
 
-        assert.deepEqual(timeline.display(userRepository.findOne({ user: "Sandro" }).posts), [
-            "This is my second post!",
-            "This is my first post!"
+        let sandroPosts = userRepository.findOne({ name: "Sandro" }).posts;
+        let sandroTimeline = new Timeline(sandroPosts);
+
+        assert.deepEqual(sandroTimeline.posts, [
+            "This is my first post! (a few seconds ago)",
+            "This is my second post! (a few seconds ago)"
         ]);
     });
 });
