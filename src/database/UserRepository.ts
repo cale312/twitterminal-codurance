@@ -16,7 +16,7 @@ export class UserRepository implements IRepository {
         return `User: '${user.name}' successfully saved to the database.`;
     }
 
-    findOne(query): User | undefined {
+    findOne(query: any): User | undefined {
         return find(this.database.data, query);
     }
 }

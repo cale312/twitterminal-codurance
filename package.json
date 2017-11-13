@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/ts-mocha ./src/test/*"
+    "test": "./node_modules/.bin/ts-mocha ./src/test/*",
+    "twitterminal": "node ./dist/app/main.js"
   },
   "keywords": [],
   "author": "",

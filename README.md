@@ -13,7 +13,8 @@ Twitterminal is a Social Networking application that runs in the terminal.
 2. Clone the repository onto your machine.
 3. Navigate to the project root directory.
 4. Run ``` npm install ``` in the project root. This will install all dependencies that are included in the package.json
-5. WORK IN PROGRESS
+5. Run ``` npm run twitterminal``` to start Twitterminal.
+6. Run ``` npm run test ``` to run the tests (Optional).
 
 ## Usage:
 
