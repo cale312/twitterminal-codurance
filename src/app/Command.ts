@@ -8,7 +8,7 @@ export abstract class Command {
         input: ISentence,
         userRepository: IRepository,
         postRepository: IRepository
-    ): string;
+    ): string | void;
 
     succeedWith(successor: Command) {
         this.successor = successor;

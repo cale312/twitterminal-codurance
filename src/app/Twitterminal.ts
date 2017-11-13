@@ -42,6 +42,11 @@ export class Twitterminal {
         let sentence = this.inputAsSentence(input);
         let firstCommand = this.availableCommands[0];
 
-        firstCommand.checkIfCanExecute(sentence, this.userRepository, this.postRepository);
+        try {
+            return firstCommand.checkIfCanExecute(sentence, this.userRepository, this.postRepository);
+        } catch {
+            return `You have entered an invalid command. Read the documentation at
+             github.com/ggsbv/twitterminal for more details.`
+        }
     }
 }

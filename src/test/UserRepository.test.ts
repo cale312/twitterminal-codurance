@@ -12,8 +12,17 @@ describe("The UserRepository Class", () => {
 
         assert.equal(userRepository.store(new User("Sandro")), "User: 'Sandro' successfully saved to the database.");
         assert.equal(userRepository.store(new User("Andre")), "User: 'Andre' successfully saved to the database.");
+    });
+
+    it("should find a stored user in the database", () => {
+        let database = new Database();
+        let userRepository = new UserRepository(database);
+
+        userRepository.store(new User("Sandro"));
+        userRepository.store(new User("Andre"));
+
         assert.equal(userRepository.findOne({ name: "Sandro" }).name, "Sandro");
         assert.equal(userRepository.findOne({ name: "Andre" }).name, "Andre");
-    })
+    });
 
 });

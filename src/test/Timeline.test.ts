@@ -27,7 +27,7 @@ describe("The Timeline Class", () => {
             "This is my first post! (11 minutes ago)"
         ]);
 
-        assert.deepEqual(timeline.display(), "Timeline has been logged to the console.");
+        assert.equal(timeline.display(), "Timeline has been logged to the console.");
     });
 
 });

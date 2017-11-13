@@ -1,16 +1,16 @@
 import { Command } from "./Command";
-import { IRepository } from "../database/IRepository";
 import { ISentence } from "./ISentence";
+import { IRepository } from "../database/IRepository";
+import { Wall } from "./Wall";
 
-export class FollowCommand extends Command {
+export class WallCommand extends Command {
     constructor() {
         super();
     }
 
     checkIfCanExecute(input: ISentence, userRepository: IRepository, postRepository: IRepository): string | void {
-        if (input.verb === "follows") {
-            return userRepository.findOne({ name: input.subject })
-                .subscribeTo(userRepository.findOne({ name: input.object }));
+        if (input.verb === "wall") {
+            return new Wall(userRepository.findOne({ name: input.subject }), userRepository).display();
         }
 
         this.next(input, userRepository, postRepository);

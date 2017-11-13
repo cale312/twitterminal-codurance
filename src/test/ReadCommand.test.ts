@@ -24,9 +24,9 @@ describe("The ReadCommand Class", () => {
         userRepository.store(sandro);
 
         let sandroPosts = [
-            new Post({ text: "First post.", author: "Sandro", createdAt: moment("2012-12-12 09:12:26") }),
-            new Post({ text: "Second post.", author: "Sandro", createdAt: moment("2012-12-12 09:14:26") }),
-            new Post({ text: "Second post.", author: "Sandro", createdAt: moment("2012-12-12 09:05:26") }),
+            new Post({ text: "First post.", author: "Sandro", createdAt: moment().subtract(9, "minutes") }),
+            new Post({ text: "Second post.", author: "Sandro", createdAt: moment().subtract(7, "minutes") }),
+            new Post({ text: "Second post.", author: "Sandro", createdAt: moment().subtract(3, "minutes") }),
         ];
 
         sandroPosts.forEach(post => postRepository.store(post));

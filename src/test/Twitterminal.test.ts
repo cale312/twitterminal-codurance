@@ -8,6 +8,8 @@ import { PostRepository } from "../app/PostRepository";
 import { ReadCommand } from "../app/ReadCommand";
 import { Timeline } from "../app/Timeline";
 import { FollowCommand } from "../app/FollowCommand";
+import { WallCommand } from "../app/WallCommand";
+import { Wall } from "../app/Wall";
 
 describe("The Twitterminal Class", () => {
 
@@ -70,7 +72,7 @@ describe("The Twitterminal Class", () => {
         let sandroPosts = userRepository.findOne({ name: "Sandro" }).posts;
         let sandroTimeline = new Timeline(sandroPosts);
 
-        assert.deepEqual(sandroTimeline.posts, [
+        assert.deepEqual(sandroTimeline.posts.sort(), [
             "This is my first post! (a few seconds ago)",
             "This is my second post! (a few seconds ago)"
         ]);
@@ -103,5 +105,42 @@ describe("The Twitterminal Class", () => {
             "Andre",
             "Charne"
         ]);
+    });
+
+    it("should display a User's wall when the input command verb is the word 'wall'", () => {
+        let database = new Database();
+        let userRepository = new UserRepository(database);
+        let postRepository = new PostRepository(database);
+        let postCommand = new PostCommand();
+        let readCommand = new ReadCommand();
+        let followCommand = new FollowCommand();
+        let wallCommand = new WallCommand();
+
+        let availableCommands = [
+            postCommand,
+            readCommand,
+            followCommand,
+            wallCommand
+        ];
+
+        let twitterminal = new Twitterminal(availableCommands, userRepository, postRepository);
+
+        twitterminal.handleInput("Sandro -> First post");
+        twitterminal.handleInput("Sandro -> Second post");
+        twitterminal.handleInput("Andre -> First post");
+        twitterminal.handleInput("Charne -> First post");
+
+        twitterminal.handleInput("Charne follows Sandro");
+        twitterminal.handleInput("Charne follows Andre");
+
+        let charneWall = new Wall(userRepository.findOne({ name: "Charne"}), userRepository);
+
+        assert.deepEqual(charneWall.posts.sort(), [
+            "Andre - First post (a few seconds ago)",
+            "Charne - First post (a few seconds ago)",
+            "Sandro - First post (a few seconds ago)",
+            "Sandro - Second post (a few seconds ago)"
+        ]);
+        // assert.equal(twitterminal.handleInput("Charne wall"), "Wall has been logged to the console.");
     });
 });

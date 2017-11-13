@@ -8,7 +8,7 @@ export class ReadCommand extends Command {
         super();
     }
 
-    checkIfCanExecute(input: ISentence, userRepository: IRepository, postRepository: IRepository): string {
+    checkIfCanExecute(input: ISentence, userRepository: IRepository, postRepository: IRepository): string | void {
         if (! input.verb) {
             return new Timeline(userRepository.findOne({ name: input.subject }).posts).display();
         }
