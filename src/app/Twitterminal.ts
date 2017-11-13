@@ -1,6 +1,9 @@
 import { IRepository } from "../database/IRepository";
-import { Command } from "./Command";
 import { ISentence } from "./ISentence";
+import { IUserInput } from "./IUserInput";
+
+import { Command } from "./Command";
+import { input, prompt } from "typed-prompts";
 
 export class Twitterminal {
     protected availableCommands: Array<Command>;
@@ -36,6 +39,13 @@ export class Twitterminal {
         }
     }
 
+    private async prompt(): Promise<prompt<IUserInput>> {
+        return await prompt<IUserInput>(input(
+            "text",
+            "Enter command:"
+        ));
+    }
+
     handleInput(input: string): string {
         this.setSuccessors(this.availableCommands);
 
@@ -48,5 +58,16 @@ export class Twitterminal {
             return `You have entered an invalid command. Read the documentation at
              github.com/ggsbv/twitterminal for more details.`
         }
+    }
+
+    async start() {
+        let userInput = await this.prompt();
+
+        while (userInput.text !== "q") {
+            this.handleInput(userInput.text);
+            userInput = await this.prompt();
+        }
+
+        console.log("Thanks for using Twitterminal. Have a nice day!");
     }
 }

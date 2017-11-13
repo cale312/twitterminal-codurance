@@ -19,6 +19,7 @@ describe("The Twitterminal Class", () => {
         let postRepository = new PostRepository(database);
 
         let postCommand = new PostCommand();
+
         let availableCommands = [
             postCommand
         ];
@@ -34,6 +35,7 @@ describe("The Twitterminal Class", () => {
         let database = new Database();
         let userRepository = new UserRepository(database);
         let postRepository = new PostRepository(database);
+
         let postCommand = new PostCommand();
 
         let availableCommands = [
@@ -55,6 +57,7 @@ describe("The Twitterminal Class", () => {
         let database = new Database();
         let userRepository = new UserRepository(database);
         let postRepository = new PostRepository(database);
+
         let postCommand = new PostCommand();
         let readCommand = new ReadCommand();
 
@@ -82,6 +85,7 @@ describe("The Twitterminal Class", () => {
         let database = new Database();
         let userRepository = new UserRepository(database);
         let postRepository = new PostRepository(database);
+
         let postCommand = new PostCommand();
         let readCommand = new ReadCommand();
         let followCommand = new FollowCommand();
@@ -111,6 +115,7 @@ describe("The Twitterminal Class", () => {
         let database = new Database();
         let userRepository = new UserRepository(database);
         let postRepository = new PostRepository(database);
+
         let postCommand = new PostCommand();
         let readCommand = new ReadCommand();
         let followCommand = new FollowCommand();

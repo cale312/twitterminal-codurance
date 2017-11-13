@@ -3,14 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ca040f23-55fc-4586-aa41-cef93a7989d9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/Command.ts" afterPath="$PROJECT_DIR$/src/app/Command.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/FollowCommand.ts" afterPath="$PROJECT_DIR$/src/app/FollowCommand.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/ReadCommand.ts" afterPath="$PROJECT_DIR$/src/app/ReadCommand.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/ConfigInterface.ts" afterPath="$PROJECT_DIR$/src/app/ConfigInterface.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/Twitterminal.ts" afterPath="$PROJECT_DIR$/src/app/Twitterminal.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/ReadCommand.test.ts" afterPath="$PROJECT_DIR$/src/test/ReadCommand.test.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/Timeline.test.ts" afterPath="$PROJECT_DIR$/src/test/Timeline.test.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/Twitterminal.test.ts" afterPath="$PROJECT_DIR$/src/test/Twitterminal.test.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/UserRepository.test.ts" afterPath="$PROJECT_DIR$/src/test/UserRepository.test.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/twitterminal.config.ts" afterPath="$PROJECT_DIR$/src/twitterminal.config.ts" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,14 +25,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="WallCommand.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/WallCommand.ts">
+      <file leaf-file-name="main.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/main.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="41" lean-forward="false" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -51,6 +47,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>console</find>
+      <find>twitt</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -60,8 +57,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/twitterminal.config.ts" />
-        <option value="$PROJECT_DIR$/src/app/ConfigInterface.ts" />
         <option value="$PROJECT_DIR$/src/app/InputInterface.ts" />
         <option value="$PROJECT_DIR$/src/test/UserRepository.ts" />
         <option value="$PROJECT_DIR$/src/test/User.ts" />
@@ -86,7 +81,6 @@
         <option value="$PROJECT_DIR$/src/test/FollowCommand.test.ts" />
         <option value="$PROJECT_DIR$/src/database/UserRepository.ts" />
         <option value="$PROJECT_DIR$/src/test/UserRepository.test.ts" />
-        <option value="$PROJECT_DIR$/src/app/Twitterminal.ts" />
         <option value="$PROJECT_DIR$/src/test/WallCommand.ts" />
         <option value="$PROJECT_DIR$/src/app/ReadCommand.ts" />
         <option value="$PROJECT_DIR$/src/app/Command.ts" />
@@ -96,8 +90,13 @@
         <option value="$PROJECT_DIR$/src/test/Wall.test.ts" />
         <option value="$PROJECT_DIR$/src/test/WallCommand.test.ts" />
         <option value="$PROJECT_DIR$/src/app/FollowCommand.ts" />
-        <option value="$PROJECT_DIR$/src/test/Twitterminal.test.ts" />
         <option value="$PROJECT_DIR$/src/app/WallCommand.ts" />
+        <option value="$PROJECT_DIR$/src/test/Twitterminal.test.ts" />
+        <option value="$PROJECT_DIR$/src/app/IUserInput.ts" />
+        <option value="$PROJECT_DIR$/src/app/ConfigInterface.ts" />
+        <option value="$PROJECT_DIR$/src/twitterminal.config.ts" />
+        <option value="$PROJECT_DIR$/src/app/main.ts" />
+        <option value="$PROJECT_DIR$/src/app/Twitterminal.ts" />
       </list>
     </option>
   </component>
@@ -197,12 +196,12 @@
       <workItem from="1510324094463" duration="5292000" />
       <workItem from="1510337654307" duration="5760000" />
       <workItem from="1510487680481" duration="16339000" />
-      <workItem from="1510575956707" duration="120000" />
+      <workItem from="1510575956707" duration="5412000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56282000" />
+    <option name="totallyTimeSpent" value="61574000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -245,22 +244,22 @@
         <state relative-caret-position="3161">
           <caret line="109" column="87" lean-forward="false" selection-start-line="109" selection-start-column="87" selection-end-line="109" selection-end-column="87" />
           <folding>
-            <marker date="1510525209000" expanded="true" signature="7:536" ph="..." />
-            <marker date="1510525209000" expanded="true" signature="579:5663" ph="{...}" />
-            <marker date="1510525209000" expanded="true" signature="692:1218" ph="{...}" />
-            <marker date="1510525209000" expanded="true" signature="929:964" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="1307:2017" ph="{...}" />
-            <marker date="1510525209000" expanded="true" signature="1544:1579" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="1921:2010" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="2125:3075" ph="{...}" />
-            <marker date="1510525209000" expanded="true" signature="2407:2467" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="2940:3067" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="3182:4135" ph="{...}" />
-            <marker date="1510525209000" expanded="true" signature="3513:3600" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="4074:4127" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="4231:5659" ph="{...}" />
-            <marker date="1510525209000" expanded="true" signature="4607:4719" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="5315:5545" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="7:536" ph="..." />
+            <marker date="1510576934000" expanded="true" signature="579:5668" ph="{...}" />
+            <marker date="1510576934000" expanded="true" signature="692:1219" ph="{...}" />
+            <marker date="1510576934000" expanded="true" signature="930:965" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="1308:2019" ph="{...}" />
+            <marker date="1510576934000" expanded="true" signature="1546:1581" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="1923:2012" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="2127:3078" ph="{...}" />
+            <marker date="1510576934000" expanded="true" signature="2410:2470" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="2943:3070" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="3185:4139" ph="{...}" />
+            <marker date="1510576934000" expanded="true" signature="3517:3604" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="4078:4131" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="4235:5664" ph="{...}" />
+            <marker date="1510576934000" expanded="true" signature="4612:4724" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="5320:5550" ph="[...]" />
           </folding>
         </state>
       </provider>
@@ -277,22 +276,22 @@
         <state relative-caret-position="1363">
           <caret line="47" column="2" lean-forward="false" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="2" />
           <folding>
-            <marker date="1510525209000" expanded="true" signature="7:536" ph="..." />
-            <marker date="1510525209000" expanded="true" signature="579:5663" ph="{...}" />
-            <marker date="1510525209000" expanded="true" signature="692:1218" ph="{...}" />
-            <marker date="1510525209000" expanded="true" signature="929:964" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="1307:2017" ph="{...}" />
-            <marker date="1510525209000" expanded="true" signature="1544:1579" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="1921:2010" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="2125:3075" ph="{...}" />
-            <marker date="1510525209000" expanded="true" signature="2407:2467" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="2940:3067" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="3182:4135" ph="{...}" />
-            <marker date="1510525209000" expanded="true" signature="3513:3600" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="4074:4127" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="4231:5659" ph="{...}" />
-            <marker date="1510525209000" expanded="true" signature="4607:4719" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="5315:5545" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="7:536" ph="..." />
+            <marker date="1510576934000" expanded="true" signature="579:5668" ph="{...}" />
+            <marker date="1510576934000" expanded="true" signature="692:1219" ph="{...}" />
+            <marker date="1510576934000" expanded="true" signature="930:965" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="1308:2019" ph="{...}" />
+            <marker date="1510576934000" expanded="true" signature="1546:1581" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="1923:2012" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="2127:3078" ph="{...}" />
+            <marker date="1510576934000" expanded="true" signature="2410:2470" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="2943:3070" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="3185:4139" ph="{...}" />
+            <marker date="1510576934000" expanded="true" signature="3517:3604" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="4078:4131" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="4235:5664" ph="{...}" />
+            <marker date="1510576934000" expanded="true" signature="4612:4724" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="5320:5550" ph="[...]" />
           </folding>
         </state>
       </provider>
@@ -314,6 +313,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1102">
           <caret line="38" column="60" lean-forward="false" selection-start-line="38" selection-start-column="60" selection-end-line="38" selection-end-column="60" />
+          <folding>
+            <marker date="1510581963000" expanded="true" signature="7:223" ph="..." />
+            <marker date="1510581963000" expanded="true" signature="251:2318" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="498:649" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="718:953" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="779:946" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="871:936" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="959:1096" ph="//..." />
+            <marker date="1510581963000" expanded="true" signature="1152:1357" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="1215:1351" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="1415:1530" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="1571:2028" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="1745:1859" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="1866:2022" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="2048:2316" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="2135:2237" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -321,6 +337,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <marker date="1510581963000" expanded="true" signature="7:223" ph="..." />
+            <marker date="1510581963000" expanded="true" signature="251:2318" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="498:649" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="718:953" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="779:946" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="871:936" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="959:1096" ph="//..." />
+            <marker date="1510581963000" expanded="true" signature="1152:1357" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="1215:1351" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="1415:1530" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="1571:2028" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="1745:1859" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="1866:2022" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="2048:2316" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="2135:2237" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -329,29 +362,12 @@
         <state relative-caret-position="174">
           <caret line="6" column="54" lean-forward="false" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
           <folding>
-            <marker date="1510327176000" expanded="true" signature="0:650" ph="{&quot;name&quot;: &quot;twitterminal&quot;...}" />
-            <marker date="1510327176000" expanded="true" signature="106:167" ph="{&quot;test&quot;: &quot;./node_modules/.bin/ts-mocha ./src/test/*&quot;...}" />
-            <marker date="1510327176000" expanded="true" signature="244:648" ph="{&quot;@types/mocha&quot;: &quot;^2.2.44&quot;...}" />
+            <marker date="1510577476000" expanded="true" signature="0:707" ph="{&quot;name&quot;: &quot;twitterminal&quot;...}" />
+            <marker date="1510577476000" expanded="true" signature="106:167" ph="{&quot;test&quot;: &quot;./node_modules/.bin/ts-mocha ./src/test/*&quot;...}" />
+            <marker date="1510577476000" expanded="true" signature="244:386" ph="{&quot;@types/mocha&quot;: &quot;^2.2.44&quot;...}" />
+            <marker date="1510577476000" expanded="true" signature="244:705" ph="{&quot;@types/mocha&quot;: &quot;^2.2.44&quot;...}" />
+            <marker date="1510577476000" expanded="true" signature="406:705" ph="{&quot;@types/lodash.filter&quot;: &quot;^4.6.3&quot;...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding>
-            <marker date="1510327176000" expanded="true" signature="0:650" ph="{&quot;name&quot;: &quot;twitterminal&quot;...}" />
-            <marker date="1510327176000" expanded="true" signature="106:167" ph="{&quot;test&quot;: &quot;./node_modules/.bin/ts-mocha ./src/test/*&quot;...}" />
-            <marker date="1510327176000" expanded="true" signature="244:648" ph="{&quot;@types/mocha&quot;: &quot;^2.2.44&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/ConfigInterface.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1" column="38" lean-forward="false" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -383,13 +399,6 @@
             <caret line="15" column="3" lean-forward="false" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/twitterminal.config.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -461,17 +470,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Command.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/ReadCommand.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <marker date="1510496176000" expanded="true" signature="7:171" ph="..." />
+            <marker date="1510496176000" expanded="true" signature="234:258" ph="{...}" />
+            <marker date="1510496176000" expanded="true" signature="373:575" ph="{...}" />
+            <marker date="1510496176000" expanded="true" signature="401:510" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -541,13 +549,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Twitterminal.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="48" column="60" lean-forward="false" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="60" />
+          <folding>
+            <marker date="1510487796000" expanded="true" signature="7:295" ph="..." />
+            <marker date="1510487796000" expanded="true" signature="411:452" ph="{...}" />
+            <marker date="1510487796000" expanded="true" signature="482:569" ph="{...}" />
+            <marker date="1510487796000" expanded="true" signature="601:813" ph="{...}" />
+            <marker date="1510487796000" expanded="true" signature="615:717" ph="{...}" />
+            <marker date="1510487796000" expanded="true" signature="724:807" ph="{...}" />
+            <marker date="1510487796000" expanded="true" signature="844:906" ph="{...}" />
+            <marker date="1510487796000" expanded="true" signature="945:1005" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -555,6 +566,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="32" column="40" lean-forward="false" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+          <folding>
+            <marker date="1510493063000" expanded="true" signature="7:289" ph="..." />
+            <marker date="1510493063000" expanded="true" signature="333:1488" ph="{...}" />
+            <marker date="1510493063000" expanded="true" signature="450:1484" ph="{...}" />
+            <marker date="1510493063000" expanded="true" signature="472:571" ph="{&quot;subject&quot;: &quot;Sandro&quot;...}" />
+            <marker date="1510493063000" expanded="true" signature="600:700" ph="{&quot;subject&quot;: &quot;Sandro&quot;...}" />
+            <marker date="1510493063000" expanded="true" signature="1423:1476" ph="[...]" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -569,6 +588,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="9" column="113" lean-forward="false" selection-start-line="9" selection-start-column="113" selection-end-line="9" selection-end-column="113" />
+          <folding>
+            <marker date="1510524475000" expanded="true" signature="7:132" ph="..." />
+            <marker date="1510524475000" expanded="true" signature="197:221" ph="{...}" />
+            <marker date="1510524475000" expanded="true" signature="336:597" ph="{...}" />
+            <marker date="1510524475000" expanded="true" signature="376:532" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -608,38 +633,150 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/Twitterminal.test.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-424">
-          <caret line="109" column="87" lean-forward="false" selection-start-line="109" selection-start-column="87" selection-end-line="109" selection-end-column="87" />
-          <folding>
-            <marker date="1510525209000" expanded="true" signature="7:536" ph="..." />
-            <marker date="1510525209000" expanded="true" signature="579:5663" ph="{...}" />
-            <marker date="1510525209000" expanded="true" signature="692:1218" ph="{...}" />
-            <marker date="1510525209000" expanded="true" signature="929:964" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="1307:2017" ph="{...}" />
-            <marker date="1510525209000" expanded="true" signature="1544:1579" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="1921:2010" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="2125:3075" ph="{...}" />
-            <marker date="1510525209000" expanded="true" signature="2407:2467" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="2940:3067" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="3182:4135" ph="{...}" />
-            <marker date="1510525209000" expanded="true" signature="3513:3600" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="4074:4127" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="4231:5659" ph="{...}" />
-            <marker date="1510525209000" expanded="true" signature="4607:4719" ph="[...]" />
-            <marker date="1510525209000" expanded="true" signature="5315:5545" ph="[...]" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/WallCommand.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <marker date="1510576075000" expanded="true" signature="7:163" ph="..." />
+            <marker date="1510576075000" expanded="true" signature="206:584" ph="{...}" />
+            <marker date="1510576075000" expanded="true" signature="226:250" ph="{...}" />
+            <marker date="1510576075000" expanded="true" signature="365:582" ph="{...}" />
+            <marker date="1510576075000" expanded="true" signature="402:517" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/Twitterminal.test.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding>
+            <marker date="1510576934000" expanded="true" signature="7:536" ph="..." />
+            <marker date="1510576934000" expanded="true" signature="579:5668" ph="{...}" />
+            <marker date="1510576934000" expanded="true" signature="692:1219" ph="{...}" />
+            <marker date="1510576934000" expanded="true" signature="930:965" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="1308:2019" ph="{...}" />
+            <marker date="1510576934000" expanded="true" signature="1546:1581" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="1923:2012" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="2127:3078" ph="{...}" />
+            <marker date="1510576934000" expanded="true" signature="2410:2470" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="2943:3070" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="3185:4139" ph="{...}" />
+            <marker date="1510576934000" expanded="true" signature="3517:3604" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="4078:4131" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="4235:5664" ph="{...}" />
+            <marker date="1510576934000" expanded="true" signature="4612:4724" ph="[...]" />
+            <marker date="1510576934000" expanded="true" signature="5320:5550" ph="[...]" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding>
+            <marker date="1510577476000" expanded="true" signature="0:707" ph="{&quot;name&quot;: &quot;twitterminal&quot;...}" />
+            <marker date="1510577476000" expanded="true" signature="106:167" ph="{&quot;test&quot;: &quot;./node_modules/.bin/ts-mocha ./src/test/*&quot;...}" />
+            <marker date="1510577476000" expanded="true" signature="244:386" ph="{&quot;@types/mocha&quot;: &quot;^2.2.44&quot;...}" />
+            <marker date="1510577476000" expanded="true" signature="244:705" ph="{&quot;@types/mocha&quot;: &quot;^2.2.44&quot;...}" />
+            <marker date="1510577476000" expanded="true" signature="406:705" ph="{&quot;@types/lodash.filter&quot;: &quot;^4.6.3&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/typed-prompts/lib/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1482280023000" expanded="false" signature="38:89" ph="..." />
+            <marker date="1482280023000" expanded="true" signature="185:576" ph="..." />
+            <marker date="1482280023000" expanded="true" signature="326:412" ph="..." />
+            <marker date="1482280023000" expanded="true" signature="474:560" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Command.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <marker date="1510496200000" expanded="true" signature="7:95" ph="..." />
+            <marker date="1510496200000" expanded="true" signature="127:618" ph="{...}" />
+            <marker date="1510496200000" expanded="true" signature="354:397" ph="{...}" />
+            <marker date="1510496200000" expanded="true" signature="484:616" ph="{...}" />
+            <marker date="1510496200000" expanded="true" signature="514:610" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/IUserInput.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding>
+            <marker date="1510580619000" expanded="true" signature="28:49" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/ConfigInterface.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <folding>
+            <marker date="1510581180000" expanded="true" signature="7:91" ph="..." />
+            <marker date="1510581180000" expanded="true" signature="126:253" ph="..." />
+            <marker date="1510581180000" expanded="true" signature="183:251" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/twitterminal.config.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding>
+            <marker date="1510581579000" expanded="true" signature="7:362" ph="..." />
+            <marker date="1510581579000" expanded="true" signature="511:737" ph="{...}" />
+            <marker date="1510581579000" expanded="true" signature="527:643" ph="[...]" />
+            <marker date="1510581579000" expanded="true" signature="661:735" ph="{&quot;forUsers&quot;: userRepository...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Twitterminal.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+          <folding>
+            <marker date="1510581963000" expanded="true" signature="7:223" ph="..." />
+            <marker date="1510581963000" expanded="true" signature="251:2318" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="498:649" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="718:953" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="779:946" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="871:936" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="959:1096" ph="//..." />
+            <marker date="1510581963000" expanded="true" signature="1152:1357" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="1215:1351" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="1415:1530" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="1571:2028" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="1745:1859" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="1866:2022" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="2048:2316" ph="{...}" />
+            <marker date="1510581963000" expanded="true" signature="2135:2237" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="41" lean-forward="false" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
