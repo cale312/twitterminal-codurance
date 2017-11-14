@@ -4,13 +4,10 @@ import { IUserInput } from "./IUserInput";
 
 import { Command } from "./Command";
 import { input, prompt } from "typed-prompts";
-import { Database } from "../database/Database";
 import { PostCommand } from "./PostCommand";
 import { ReadCommand } from "./ReadCommand";
 import { FollowCommand } from "./FollowCommand";
 import { WallCommand } from "./WallCommand";
-import { UserRepository } from "../database/UserRepository";
-import { PostRepository } from "../database/PostRepository";
 
 export class Twitterminal {
     protected userRepository: IRepository;

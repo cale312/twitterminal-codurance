@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca040f23-55fc-4586-aa41-cef93a7989d9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/app/PostRepository.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/app/Command.js" afterPath="$PROJECT_DIR$/dist/app/Command.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/app/FollowCommand.js" afterPath="$PROJECT_DIR$/dist/app/FollowCommand.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/app/PostCommand.js" afterPath="$PROJECT_DIR$/dist/app/PostCommand.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/app/ReadCommand.js" afterPath="$PROJECT_DIR$/dist/app/ReadCommand.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/app/Twitterminal.js" afterPath="$PROJECT_DIR$/dist/app/Twitterminal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/app/WallCommand.js" afterPath="$PROJECT_DIR$/dist/app/WallCommand.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/app/main.js" afterPath="$PROJECT_DIR$/dist/app/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/test/FollowCommand.test.js" afterPath="$PROJECT_DIR$/dist/test/FollowCommand.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/test/PostCommand.test.js" afterPath="$PROJECT_DIR$/dist/test/PostCommand.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/test/PostRepository.test.js" afterPath="$PROJECT_DIR$/dist/test/PostRepository.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/test/ReadCommand.test.js" afterPath="$PROJECT_DIR$/dist/test/ReadCommand.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/test/Twitterminal.test.js" afterPath="$PROJECT_DIR$/dist/test/Twitterminal.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/test/Wall.test.js" afterPath="$PROJECT_DIR$/dist/test/Wall.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/test/WallCommand.test.js" afterPath="$PROJECT_DIR$/dist/test/WallCommand.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/twitterminal.config.js" afterPath="$PROJECT_DIR$/dist/twitterminal.config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/Twitterminal.ts" afterPath="$PROJECT_DIR$/src/app/Twitterminal.ts" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,6 +16,22 @@
     <fileColor scope="Non-Project Files (Material Darker)" color="323232" />
     <fileColor scope="Non-Project Files (Material Lighter)" color="eae8e8" />
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="Twitterminal.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/Twitterminal.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -83,7 +83,6 @@
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/src/twitterminal.config.ts" />
         <option value="$PROJECT_DIR$/src/test/Twitterminal.test.ts" />
-        <option value="$PROJECT_DIR$/src/app/Twitterminal.ts" />
         <option value="$PROJECT_DIR$/src/app/main.ts" />
         <option value="$PROJECT_DIR$/src/database/IRepository.ts" />
         <option value="$PROJECT_DIR$/src/app/Command.ts" />
@@ -95,6 +94,7 @@
         <option value="$PROJECT_DIR$/src/app/PostCommand.ts" />
         <option value="$PROJECT_DIR$/src/app/ReadCommand.ts" />
         <option value="$PROJECT_DIR$/src/app/WallCommand.ts" />
+        <option value="$PROJECT_DIR$/src/app/Twitterminal.ts" />
       </list>
     </option>
   </component>
@@ -184,15 +184,16 @@
       <workItem from="1510585383569" duration="2229000" />
       <workItem from="1510587803940" duration="739000" />
       <workItem from="1510646345399" duration="3653000" />
-      <workItem from="1510654617185" duration="1484000" />
+      <workItem from="1510654617185" duration="1702000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71006000" />
+    <option name="totallyTimeSpent" value="71224000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -623,31 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Twitterminal.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="68" column="38" lean-forward="false" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
-          <folding>
-            <marker date="1510651036000" expanded="false" signature="7:578" ph="..." />
-            <marker date="1510651036000" expanded="true" signature="606:2802" ph="{...}" />
-            <marker date="1510651036000" expanded="true" signature="818:1185" ph="{...}" />
-            <marker date="1510651036000" expanded="true" signature="946:1179" ph="[...]" />
-            <marker date="1510651036000" expanded="true" signature="1254:1489" ph="{...}" />
-            <marker date="1510651036000" expanded="true" signature="1315:1482" ph="{...}" />
-            <marker date="1510651036000" expanded="true" signature="1407:1472" ph="{...}" />
-            <marker date="1510651036000" expanded="true" signature="1495:1632" ph="//..." />
-            <marker date="1510651036000" expanded="true" signature="1688:1893" ph="{...}" />
-            <marker date="1510651036000" expanded="true" signature="1751:1887" ph="{...}" />
-            <marker date="1510651036000" expanded="true" signature="1951:2066" ph="{...}" />
-            <marker date="1510651036000" expanded="true" signature="2107:2512" ph="{...}" />
-            <marker date="1510651036000" expanded="true" signature="2281:2343" ph="{...}" />
-            <marker date="1510651036000" expanded="true" signature="2350:2506" ph="{...}" />
-            <marker date="1510651036000" expanded="true" signature="2532:2800" ph="{...}" />
-            <marker date="1510651036000" expanded="true" signature="2619:2721" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/User.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
@@ -730,6 +706,16 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Twitterminal.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
