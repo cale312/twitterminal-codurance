@@ -2,7 +2,7 @@ import * as assert from "assert";
 import * as moment from "moment";
 
 import { User } from "../app/User";
-import { PostRepository } from "../app/PostRepository";
+import { PostRepository } from "../database/PostRepository";
 import { Post } from "../app/Post";
 import { UserRepository } from "../database/UserRepository";
 import { Database } from "../database/Database";

@@ -4,15 +4,23 @@ import { IRepository } from "../database/IRepository";
 import { Wall } from "./Wall";
 
 export class WallCommand extends Command {
-    constructor() {
+    private userRepository: IRepository;
+
+    constructor(userRepository: IRepository) {
         super();
+
+        this.userRepository = userRepository;
     }
 
-    checkIfCanExecute(input: ISentence, userRepository: IRepository, postRepository: IRepository): string | void {
-        if (input.verb === "wall") {
-            return new Wall(userRepository.findOne({ name: input.subject }), userRepository).display();
+    private canExecute(input): boolean {
+        return input.verb === 'wall';
+    }
+
+    execute(input: ISentence): string {
+        if (this.canExecute(input)) {
+            return new Wall(this.userRepository.findOne({ name: input.subject }), this.userRepository).display();
         }
 
-        this.next(input, userRepository, postRepository);
+        this.next(input);
     }
 }

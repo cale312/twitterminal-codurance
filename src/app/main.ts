@@ -1,11 +1,11 @@
 import { Twitterminal } from "./Twitterminal";
-import config from "../twitterminal.config";
+import { Database } from "../database/Database";
+import { UserRepository } from "../database/UserRepository";
+import { PostRepository } from "../database/PostRepository";
 
-let twitterminal = new Twitterminal(
-    config.commands,
-    config.repository.forUsers,
-    config.repository.forPosts
-);
+let database = new Database();
+
+let twitterminal = new Twitterminal(new UserRepository(database), new PostRepository(database));
 
 console.log(`
 *~~~~~~~~~~~~~~~*~~~~~~~~~~~~~~~*~~~~~~~~~~~~~~~*~~~~~~~~~~~~~~~*~~~~~~~~~~~~~~~*

@@ -24,6 +24,6 @@ describe("The WallCommand Class", function () {
         postRepository.store(new Post_1.Post({ text: "Second", author: "Sandro", createdAt: moment().subtract(9, "minutes") }));
         postRepository.store(new Post_1.Post({ text: "Second", author: "Charne", createdAt: moment().subtract(4, "minutes") }));
         var wallCommand = new WallCommand_1.WallCommand();
-        assert.equal(wallCommand.checkIfCanExecute(input, userRepository, postRepository), "Wall has been logged to the console.");
+        assert.equal(wallCommand.execute(input, userRepository, postRepository), "Wall has been logged to the console.");
     });
 });

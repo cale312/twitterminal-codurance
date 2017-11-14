@@ -3,16 +3,24 @@ import { IRepository } from "../database/IRepository";
 import { ISentence } from "./ISentence";
 
 export class FollowCommand extends Command {
-    constructor() {
+    private userRepository: IRepository;
+
+    constructor(userRepository: IRepository) {
         super();
+
+        this.userRepository = userRepository;
     }
 
-    checkIfCanExecute(input: ISentence, userRepository: IRepository, postRepository: IRepository): string | void {
-        if (input.verb === "follows") {
-            return userRepository.findOne({ name: input.subject })
-                .subscribeTo(userRepository.findOne({ name: input.object }));
+    private canExecute(input: ISentence): boolean {
+        return input.verb === 'follows';
+    }
+
+    execute(input: ISentence): string {
+        if (this.canExecute(input)) {
+            return this.userRepository.findOne({ name: input.subject })
+                .subscribeTo(this.userRepository.findOne({ name: input.object }));
         }
 
-        this.next(input, userRepository, postRepository);
+        this.next(input);
     }
 }

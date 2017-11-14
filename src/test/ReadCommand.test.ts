@@ -1,6 +1,6 @@
 import * as assert from "assert";
 import { UserRepository } from "../database/UserRepository";
-import { PostRepository } from "../app/PostRepository";
+import { PostRepository } from "../database/PostRepository";
 import { Database } from "../database/Database";
 import { ReadCommand } from "../app/ReadCommand";
 import { User } from "../app/User";
@@ -31,11 +31,9 @@ describe("The ReadCommand Class", () => {
 
         sandroPosts.forEach(post => postRepository.store(post));
 
-        let readCommand = new ReadCommand();
+        let readCommand = new ReadCommand(userRepository);
 
-
-        assert.equal(readCommand.checkIfCanExecute(input, userRepository, postRepository),
-            "Timeline has been logged to the console.");
+        assert.equal(readCommand.execute(input), "Timeline has been logged to the console.");
     })
 
 });

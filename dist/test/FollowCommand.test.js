@@ -25,8 +25,8 @@ describe("The FollowCommand Class", function () {
         userRepository.store(new User_1.User("Sandro"));
         userRepository.store(new User_1.User("Andre"));
         userRepository.store(new User_1.User("Charne"));
-        assert.equal(followCommand.checkIfCanExecute(input, userRepository, postRepository), "Sandro has followed Andre.");
-        assert.equal(followCommand.checkIfCanExecute(secondInput, userRepository, postRepository), "Sandro has followed Charne.");
+        assert.equal(followCommand.execute(input, userRepository, postRepository), "Sandro has followed Andre.");
+        assert.equal(followCommand.execute(secondInput, userRepository, postRepository), "Sandro has followed Charne.");
         assert.deepEqual(userRepository.findOne({ name: "Sandro" }).subscribedTo, [
             "Andre",
             "Charne"

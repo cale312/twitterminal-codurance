@@ -75,7 +75,7 @@ var Twitterminal = /** @class */ (function () {
         var sentence = this.inputAsSentence(input);
         var firstCommand = this.availableCommands[0];
         try {
-            return firstCommand.checkIfCanExecute(sentence, this.userRepository, this.postRepository);
+            return firstCommand.execute(sentence, this.userRepository, this.postRepository);
         }
         catch (_a) {
             return "You have entered an invalid command. Read the documentation at\n             github.com/ggsbv/twitterminal for more details.";

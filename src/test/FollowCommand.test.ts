@@ -1,7 +1,7 @@
 import * as assert from "assert";
 import { Database } from "../database/Database";
 import { UserRepository } from "../database/UserRepository";
-import { PostRepository } from "../app/PostRepository";
+import { PostRepository } from "../database/PostRepository";
 import { FollowCommand } from "../app/FollowCommand";
 import { User } from "../app/User";
 
@@ -22,18 +22,15 @@ describe("The FollowCommand Class", () => {
 
         let database = new Database();
         let userRepository = new UserRepository(database);
-        let postRepository = new PostRepository(database);
 
-        let followCommand = new FollowCommand();
+        let followCommand = new FollowCommand(userRepository);
 
         userRepository.store(new User("Sandro"));
         userRepository.store(new User("Andre"));
         userRepository.store(new User("Charne"));
 
-        assert.equal(followCommand.checkIfCanExecute(input, userRepository, postRepository),
-            "Sandro has followed Andre.");
-        assert.equal(followCommand.checkIfCanExecute(secondInput, userRepository, postRepository),
-            "Sandro has followed Charne.");
+        assert.equal(followCommand.execute(input), "Sandro has followed Andre.");
+        assert.equal(followCommand.execute(secondInput), "Sandro has followed Charne.");
 
         assert.deepEqual(userRepository.findOne({ name: "Sandro" }).subscribedTo, [
             "Andre",

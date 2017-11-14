@@ -4,16 +4,29 @@ import { IUserInput } from "./IUserInput";
 
 import { Command } from "./Command";
 import { input, prompt } from "typed-prompts";
+import { Database } from "../database/Database";
+import { PostCommand } from "./PostCommand";
+import { ReadCommand } from "./ReadCommand";
+import { FollowCommand } from "./FollowCommand";
+import { WallCommand } from "./WallCommand";
+import { UserRepository } from "../database/UserRepository";
+import { PostRepository } from "../database/PostRepository";
 
 export class Twitterminal {
-    protected availableCommands: Array<Command>;
     protected userRepository: IRepository;
     protected postRepository: IRepository;
+    protected availableCommands: Array<Command>;
 
-    constructor(availableCommands: Array<Command>, userRepository: IRepository, postRepository: IRepository) {
-        this.availableCommands = availableCommands;
+    constructor(userRepository: IRepository, postRepository: IRepository) {
         this.userRepository = userRepository;
         this.postRepository = postRepository;
+
+        this.availableCommands = [
+            new PostCommand(this.userRepository, this.postRepository),
+            new ReadCommand(this.userRepository),
+            new FollowCommand(this.userRepository),
+            new WallCommand(this.userRepository)
+        ]
     }
 
     private setSuccessors(availableCommands: Array<Command>): void {
@@ -53,7 +66,7 @@ export class Twitterminal {
         let firstCommand = this.availableCommands[0];
 
         try {
-            return firstCommand.checkIfCanExecute(sentence, this.userRepository, this.postRepository);
+            return firstCommand.execute(sentence);
         } catch {
             return `You have entered an invalid command. Read the documentation at
              github.com/ggsbv/twitterminal for more details.`

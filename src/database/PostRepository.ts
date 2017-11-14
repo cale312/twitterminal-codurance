@@ -2,11 +2,11 @@ import * as find from "lodash.find";
 import * as filter from "lodash.filter";
 import * as flattenDeep from "lodash.flattendeep";
 
-import { Database } from "../database/Database";
-import { IRepository } from "../database/IRepository";
-import { Post } from "./Post";
-import { User } from "./User";
-import { IQuery } from "./IQuery";
+import { Database } from "./Database";
+import { IRepository } from "./IRepository";
+import { Post } from "../app/Post";
+import { User } from "../app/User";
+import { IQuery } from "../app/IQuery";
 
 export class PostRepository implements IRepository {
     database: Database;

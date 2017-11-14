@@ -2,7 +2,7 @@ import * as assert from "assert";
 import { PostCommand } from "../app/PostCommand";
 import { UserRepository } from "../database/UserRepository";
 import { Database } from "../database/Database";
-import { PostRepository } from "../app/PostRepository";
+import { PostRepository } from "../database/PostRepository";
 
 describe("The PostCommand class", () => {
 
@@ -17,9 +17,9 @@ describe("The PostCommand class", () => {
         let userRepository = new UserRepository(database);
         let postRepository = new PostRepository(database);
 
-        let postCommand = new PostCommand();
+        let postCommand = new PostCommand(userRepository, postRepository);
 
-        postCommand.checkIfCanExecute(input, userRepository, postRepository);
+        postCommand.execute(input);
 
         assert.equal(userRepository.findOne({ name: "Sandro" }).name, "Sandro");
     })

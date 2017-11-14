@@ -19,7 +19,7 @@ var PostCommand = /** @class */ (function (_super) {
     function PostCommand() {
         return _super.call(this) || this;
     }
-    PostCommand.prototype.checkIfCanExecute = function (input, userRepository, postRepository) {
+    PostCommand.prototype.execute = function (input, userRepository, postRepository) {
         if (input.verb === '->') {
             var user = userRepository.findOne({ name: input.subject });
             if (!user) {

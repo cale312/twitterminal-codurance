@@ -17,7 +17,7 @@ var WallCommand = /** @class */ (function (_super) {
     function WallCommand() {
         return _super.call(this) || this;
     }
-    WallCommand.prototype.checkIfCanExecute = function (input, userRepository, postRepository) {
+    WallCommand.prototype.execute = function (input, userRepository, postRepository) {
         if (input.verb === "wall") {
             return new Wall_1.Wall(userRepository.findOne({ name: input.subject }), userRepository).display();
         }

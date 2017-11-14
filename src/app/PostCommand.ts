@@ -8,22 +8,32 @@ import { ISentence } from "./ISentence";
 import { IRepository } from "../database/IRepository";
 
 export class PostCommand extends Command {
-    constructor() {
+    private userRepository: IRepository;
+    private postRepository: IRepository;
+
+    constructor(userRepository: IRepository, postRepository: IRepository) {
         super();
+
+        this.userRepository = userRepository;
+        this.postRepository = postRepository;
     }
 
-    checkIfCanExecute(input: ISentence, userRepository: IRepository, postRepository: IRepository): string | void {
-        if (input.verb === '->') {
-            let user = userRepository.findOne({ name: input.subject });
+    private canExecute(input: ISentence): boolean {
+        return input.verb === '->';
+    }
+
+    execute(input: ISentence): string {
+        if (this.canExecute(input)) {
+            let user = this.userRepository.findOne({ name: input.subject });
 
             if (! user) {
                 user = new User(input.subject);
-                userRepository.store(user);
+                this.userRepository.store(user);
             }
 
-            return postRepository.store(new Post({ text: input.object, author: user.name, createdAt: moment() }));
+            return this.postRepository.store(new Post({ text: input.object, author: user.name, createdAt: moment() }));
         }
 
-        this.next(input, userRepository, postRepository);
+        this.next(input);
     }
 }

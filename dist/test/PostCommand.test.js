@@ -16,7 +16,7 @@ describe("The PostCommand class", function () {
         var userRepository = new UserRepository_1.UserRepository(database);
         var postRepository = new PostRepository_1.PostRepository(database);
         var postCommand = new PostCommand_1.PostCommand();
-        postCommand.checkIfCanExecute(input, userRepository, postRepository);
+        postCommand.execute(input, userRepository, postRepository);
         assert.equal(userRepository.findOne({ name: "Sandro" }).name, "Sandro");
     });
 });

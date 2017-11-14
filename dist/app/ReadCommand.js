@@ -17,7 +17,7 @@ var ReadCommand = /** @class */ (function (_super) {
     function ReadCommand() {
         return _super.call(this) || this;
     }
-    ReadCommand.prototype.checkIfCanExecute = function (input, userRepository, postRepository) {
+    ReadCommand.prototype.execute = function (input, userRepository, postRepository) {
         if (!input.verb) {
             return new Timeline_1.Timeline(userRepository.findOne({ name: input.subject }).posts).display();
         }

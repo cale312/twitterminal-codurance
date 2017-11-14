@@ -16,7 +16,7 @@ var FollowCommand = /** @class */ (function (_super) {
     function FollowCommand() {
         return _super.call(this) || this;
     }
-    FollowCommand.prototype.checkIfCanExecute = function (input, userRepository, postRepository) {
+    FollowCommand.prototype.execute = function (input, userRepository, postRepository) {
         if (input.verb === "follows") {
             return userRepository.findOne({ name: input.subject })
                 .subscribeTo(userRepository.findOne({ name: input.object }));

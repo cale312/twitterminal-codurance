@@ -8,7 +8,7 @@ var Command = /** @class */ (function () {
     };
     Command.prototype.next = function (input, userRepository, postRepository) {
         if (this.successor) {
-            this.successor.checkIfCanExecute(input, userRepository, postRepository);
+            this.successor.execute(input, userRepository, postRepository);
         }
     };
     return Command;

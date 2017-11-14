@@ -4,15 +4,23 @@ import { IRepository } from "../database/IRepository";
 import { Timeline } from "./Timeline";
 
 export class ReadCommand extends Command {
-    constructor() {
+    private userRepository: IRepository;
+
+    constructor(userRepository: IRepository) {
         super();
+
+        this.userRepository = userRepository;
     }
 
-    checkIfCanExecute(input: ISentence, userRepository: IRepository, postRepository: IRepository): string | void {
-        if (! input.verb) {
-            return new Timeline(userRepository.findOne({ name: input.subject }).posts).display();
+    private canExecute(input: ISentence): boolean {
+        return input.verb === undefined;
+    }
+
+    execute(input: ISentence): string {
+        if (this.canExecute(input)) {
+            return new Timeline(this.userRepository.findOne({ name: input.subject }).posts).display();
         }
 
-        this.next(input, userRepository, postRepository);
+        this.next(input);
     }
 }

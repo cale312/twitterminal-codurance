@@ -1,7 +1,7 @@
 import * as assert from "assert";
 import { UserRepository } from "../database/UserRepository";
 import { Database } from "../database/Database";
-import { PostRepository } from "../app/PostRepository";
+import { PostRepository } from "../database/PostRepository";
 import { User } from "../app/User";
 import { Post } from "../app/Post";
 import moment = require("moment");

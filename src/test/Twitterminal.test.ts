@@ -4,7 +4,7 @@ import { Twitterminal } from "../app/Twitterminal";
 import { UserRepository } from "../database/UserRepository";
 import { PostCommand } from "../app/PostCommand";
 import { Database } from "../database/Database";
-import { PostRepository } from "../app/PostRepository";
+import { PostRepository } from "../database/PostRepository";
 import { ReadCommand } from "../app/ReadCommand";
 import { Timeline } from "../app/Timeline";
 import { FollowCommand } from "../app/FollowCommand";
@@ -18,13 +18,7 @@ describe("The Twitterminal Class", () => {
         let userRepository = new UserRepository(database);
         let postRepository = new PostRepository(database);
 
-        let postCommand = new PostCommand();
-
-        let availableCommands = [
-            postCommand
-        ];
-
-        let twitterminal = new Twitterminal(availableCommands, userRepository, postRepository);
+        let twitterminal = new Twitterminal(userRepository, postRepository);
 
         twitterminal.handleInput("Sandro -> This is first post!");
 
@@ -36,13 +30,7 @@ describe("The Twitterminal Class", () => {
         let userRepository = new UserRepository(database);
         let postRepository = new PostRepository(database);
 
-        let postCommand = new PostCommand();
-
-        let availableCommands = [
-            postCommand
-        ];
-
-        let twitterminal = new Twitterminal(availableCommands, userRepository, postRepository);
+        let twitterminal = new Twitterminal(userRepository, postRepository);
 
         twitterminal.handleInput("Sandro -> This is my first post!");
         twitterminal.handleInput("Sandro -> This is my second post...");
@@ -58,15 +46,7 @@ describe("The Twitterminal Class", () => {
         let userRepository = new UserRepository(database);
         let postRepository = new PostRepository(database);
 
-        let postCommand = new PostCommand();
-        let readCommand = new ReadCommand();
-
-        let availableCommands = [
-            postCommand,
-            readCommand
-        ];
-
-        let twitterminal = new Twitterminal(availableCommands, userRepository, postRepository);
+        let twitterminal = new Twitterminal(userRepository, postRepository);
 
         twitterminal.handleInput("Sandro -> This is my first post!");
         twitterminal.handleInput("Sandro -> This is my second post!");
@@ -86,17 +66,7 @@ describe("The Twitterminal Class", () => {
         let userRepository = new UserRepository(database);
         let postRepository = new PostRepository(database);
 
-        let postCommand = new PostCommand();
-        let readCommand = new ReadCommand();
-        let followCommand = new FollowCommand();
-
-        let availableCommands = [
-            postCommand,
-            readCommand,
-            followCommand
-        ];
-
-        let twitterminal = new Twitterminal(availableCommands, userRepository, postRepository);
+        let twitterminal = new Twitterminal(userRepository, postRepository);
 
         twitterminal.handleInput("Sandro -> First post");
         twitterminal.handleInput("Andre -> First post");
@@ -116,19 +86,7 @@ describe("The Twitterminal Class", () => {
         let userRepository = new UserRepository(database);
         let postRepository = new PostRepository(database);
 
-        let postCommand = new PostCommand();
-        let readCommand = new ReadCommand();
-        let followCommand = new FollowCommand();
-        let wallCommand = new WallCommand();
-
-        let availableCommands = [
-            postCommand,
-            readCommand,
-            followCommand,
-            wallCommand
-        ];
-
-        let twitterminal = new Twitterminal(availableCommands, userRepository, postRepository);
+        let twitterminal = new Twitterminal(userRepository, postRepository);
 
         twitterminal.handleInput("Sandro -> First post");
         twitterminal.handleInput("Sandro -> Second post");

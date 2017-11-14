@@ -27,6 +27,6 @@ describe("The ReadCommand Class", function () {
         ];
         sandroPosts.forEach(function (post) { return postRepository.store(post); });
         var readCommand = new ReadCommand_1.ReadCommand();
-        assert.equal(readCommand.checkIfCanExecute(input, userRepository, postRepository), "Timeline has been logged to the console.");
+        assert.equal(readCommand.execute(input, userRepository, postRepository), "Timeline has been logged to the console.");
     });
 });

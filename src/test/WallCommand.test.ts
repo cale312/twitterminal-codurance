@@ -1,7 +1,7 @@
 import * as assert from "assert";
 import { Database } from "../database/Database";
 import { UserRepository } from "../database/UserRepository";
-import { PostRepository } from "../app/PostRepository";
+import { PostRepository } from "../database/PostRepository";
 import { WallCommand } from "../app/WallCommand";
 import { User } from "../app/User";
 import { Post } from "../app/Post";
@@ -28,11 +28,9 @@ describe("The WallCommand Class", () => {
         postRepository.store(new Post({ text: "Second", author: "Sandro", createdAt: moment().subtract(9, "minutes") }));
         postRepository.store(new Post({ text: "Second", author: "Charne", createdAt: moment().subtract(4, "minutes") }));
 
-        let wallCommand = new WallCommand();
+        let wallCommand = new WallCommand(userRepository);
 
-        assert.equal(wallCommand.checkIfCanExecute(input, userRepository, postRepository),
-            "Wall has been logged to the console.");
-
+        assert.equal(wallCommand.execute(input), "Wall has been logged to the console.");
     })
 
 });
