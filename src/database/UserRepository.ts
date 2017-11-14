@@ -3,6 +3,7 @@ import * as find from "lodash.find";
 import { Database } from "./Database";
 import { User } from "../app/User";
 import { IRepository } from "./IRepository";
+import { IQuery } from "../app/IQuery";
 
 export class UserRepository implements IRepository {
     database: Database;
@@ -16,7 +17,7 @@ export class UserRepository implements IRepository {
         return `User: '${user.name}' successfully saved to the database.`;
     }
 
-    findOne(query: any): User | undefined {
+    findOne(query: IQuery): User | undefined {
         return find(this.database.data, query);
     }
 }

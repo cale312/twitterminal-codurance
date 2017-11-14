@@ -1,3 +1,3 @@
 export interface IQuery {
-    name: string
+    name?: string;
 }
