@@ -2,33 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca040f23-55fc-4586-aa41-cef93a7989d9" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/PostRepository.ts" afterPath="$PROJECT_DIR$/src/database/PostRepository.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/app/Command.js" afterPath="$PROJECT_DIR$/dist/app/Command.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/app/FollowCommand.js" afterPath="$PROJECT_DIR$/dist/app/FollowCommand.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/app/PostCommand.js" afterPath="$PROJECT_DIR$/dist/app/PostCommand.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/app/ReadCommand.js" afterPath="$PROJECT_DIR$/dist/app/ReadCommand.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/app/Twitterminal.js" afterPath="$PROJECT_DIR$/dist/app/Twitterminal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/app/WallCommand.js" afterPath="$PROJECT_DIR$/dist/app/WallCommand.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/test/FollowCommand.test.js" afterPath="$PROJECT_DIR$/dist/test/FollowCommand.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/test/PostCommand.test.js" afterPath="$PROJECT_DIR$/dist/test/PostCommand.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/test/ReadCommand.test.js" afterPath="$PROJECT_DIR$/dist/test/ReadCommand.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/test/WallCommand.test.js" afterPath="$PROJECT_DIR$/dist/test/WallCommand.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/Command.ts" afterPath="$PROJECT_DIR$/src/app/Command.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/FollowCommand.ts" afterPath="$PROJECT_DIR$/src/app/FollowCommand.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/PostCommand.ts" afterPath="$PROJECT_DIR$/src/app/PostCommand.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/ReadCommand.ts" afterPath="$PROJECT_DIR$/src/app/ReadCommand.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/Twitterminal.ts" afterPath="$PROJECT_DIR$/src/app/Twitterminal.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/WallCommand.ts" afterPath="$PROJECT_DIR$/src/app/WallCommand.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main.ts" afterPath="$PROJECT_DIR$/src/app/main.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/FollowCommand.test.ts" afterPath="$PROJECT_DIR$/src/test/FollowCommand.test.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/PostCommand.test.ts" afterPath="$PROJECT_DIR$/src/test/PostCommand.test.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/PostRepository.test.ts" afterPath="$PROJECT_DIR$/src/test/PostRepository.test.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/ReadCommand.test.ts" afterPath="$PROJECT_DIR$/src/test/ReadCommand.test.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/Twitterminal.test.ts" afterPath="$PROJECT_DIR$/src/test/Twitterminal.test.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/Wall.test.ts" afterPath="$PROJECT_DIR$/src/test/Wall.test.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/WallCommand.test.ts" afterPath="$PROJECT_DIR$/src/test/WallCommand.test.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/twitterminal.config.ts" afterPath="$PROJECT_DIR$/src/twitterminal.config.ts" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,8 +22,8 @@
       <file leaf-file-name="WallCommand.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/WallCommand.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+            <state relative-caret-position="319">
+              <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -208,12 +182,12 @@
       <workItem from="1510585383569" duration="2229000" />
       <workItem from="1510587803940" duration="739000" />
       <workItem from="1510646345399" duration="3653000" />
-      <workItem from="1510654617185" duration="1184000" />
+      <workItem from="1510654617185" duration="1325000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70706000" />
+    <option name="totallyTimeSpent" value="70847000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -744,8 +718,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/WallCommand.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        <state relative-caret-position="319">
+          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
           <folding />
         </state>
       </provider>

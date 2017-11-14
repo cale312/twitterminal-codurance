@@ -12,7 +12,7 @@ export class WallCommand extends Command {
         this.userRepository = userRepository;
     }
 
-    private canExecute(input): boolean {
+    private canExecute(input: ISentence): boolean {
         return input.verb === 'wall';
     }
 
