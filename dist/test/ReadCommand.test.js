@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var assert = require("assert");
 var UserRepository_1 = require("../database/UserRepository");
-var PostRepository_1 = require("../app/PostRepository");
+var PostRepository_1 = require("../database/PostRepository");
 var Database_1 = require("../database/Database");
 var ReadCommand_1 = require("../app/ReadCommand");
 var User_1 = require("../app/User");
@@ -26,7 +26,7 @@ describe("The ReadCommand Class", function () {
             new Post_1.Post({ text: "Second post.", author: "Sandro", createdAt: moment().subtract(3, "minutes") }),
         ];
         sandroPosts.forEach(function (post) { return postRepository.store(post); });
-        var readCommand = new ReadCommand_1.ReadCommand();
-        assert.equal(readCommand.execute(input, userRepository, postRepository), "Timeline has been logged to the console.");
+        var readCommand = new ReadCommand_1.ReadCommand(userRepository);
+        assert.equal(readCommand.execute(input), "Timeline has been logged to the console.");
     });
 });

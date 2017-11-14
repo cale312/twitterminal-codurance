@@ -14,14 +14,19 @@ var Command_1 = require("./Command");
 var Timeline_1 = require("./Timeline");
 var ReadCommand = /** @class */ (function (_super) {
     __extends(ReadCommand, _super);
-    function ReadCommand() {
-        return _super.call(this) || this;
+    function ReadCommand(userRepository) {
+        var _this = _super.call(this) || this;
+        _this.userRepository = userRepository;
+        return _this;
     }
-    ReadCommand.prototype.execute = function (input, userRepository, postRepository) {
-        if (!input.verb) {
-            return new Timeline_1.Timeline(userRepository.findOne({ name: input.subject }).posts).display();
+    ReadCommand.prototype.canExecute = function (input) {
+        return input.verb === undefined;
+    };
+    ReadCommand.prototype.execute = function (input) {
+        if (this.canExecute(input)) {
+            return new Timeline_1.Timeline(this.userRepository.findOne({ name: input.subject }).posts).display();
         }
-        this.next(input, userRepository, postRepository);
+        this.next(input);
     };
     return ReadCommand;
 }(Command_1.Command));

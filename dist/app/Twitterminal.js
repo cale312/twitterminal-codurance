@@ -36,11 +36,20 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var typed_prompts_1 = require("typed-prompts");
+var PostCommand_1 = require("./PostCommand");
+var ReadCommand_1 = require("./ReadCommand");
+var FollowCommand_1 = require("./FollowCommand");
+var WallCommand_1 = require("./WallCommand");
 var Twitterminal = /** @class */ (function () {
-    function Twitterminal(availableCommands, userRepository, postRepository) {
-        this.availableCommands = availableCommands;
+    function Twitterminal(userRepository, postRepository) {
         this.userRepository = userRepository;
         this.postRepository = postRepository;
+        this.availableCommands = [
+            new PostCommand_1.PostCommand(this.userRepository, this.postRepository),
+            new ReadCommand_1.ReadCommand(this.userRepository),
+            new FollowCommand_1.FollowCommand(this.userRepository),
+            new WallCommand_1.WallCommand(this.userRepository)
+        ];
     }
     Twitterminal.prototype.setSuccessors = function (availableCommands) {
         this.availableCommands.forEach(function (command, index) {
@@ -75,7 +84,7 @@ var Twitterminal = /** @class */ (function () {
         var sentence = this.inputAsSentence(input);
         var firstCommand = this.availableCommands[0];
         try {
-            return firstCommand.execute(sentence, this.userRepository, this.postRepository);
+            return firstCommand.execute(sentence);
         }
         catch (_a) {
             return "You have entered an invalid command. Read the documentation at\n             github.com/ggsbv/twitterminal for more details.";

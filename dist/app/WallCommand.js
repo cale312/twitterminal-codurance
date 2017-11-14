@@ -14,14 +14,19 @@ var Command_1 = require("./Command");
 var Wall_1 = require("./Wall");
 var WallCommand = /** @class */ (function (_super) {
     __extends(WallCommand, _super);
-    function WallCommand() {
-        return _super.call(this) || this;
+    function WallCommand(userRepository) {
+        var _this = _super.call(this) || this;
+        _this.userRepository = userRepository;
+        return _this;
     }
-    WallCommand.prototype.execute = function (input, userRepository, postRepository) {
-        if (input.verb === "wall") {
-            return new Wall_1.Wall(userRepository.findOne({ name: input.subject }), userRepository).display();
+    WallCommand.prototype.canExecute = function (input) {
+        return input.verb === 'wall';
+    };
+    WallCommand.prototype.execute = function (input) {
+        if (this.canExecute(input)) {
+            return new Wall_1.Wall(this.userRepository.findOne({ name: input.subject }), this.userRepository).display();
         }
-        this.next(input, userRepository, postRepository);
+        this.next(input);
     };
     return WallCommand;
 }(Command_1.Command));

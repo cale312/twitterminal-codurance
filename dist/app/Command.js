@@ -6,9 +6,9 @@ var Command = /** @class */ (function () {
     Command.prototype.succeedWith = function (successor) {
         this.successor = successor;
     };
-    Command.prototype.next = function (input, userRepository, postRepository) {
+    Command.prototype.next = function (input) {
         if (this.successor) {
-            this.successor.execute(input, userRepository, postRepository);
+            this.successor.execute(input);
         }
     };
     return Command;

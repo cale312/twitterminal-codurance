@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var assert = require("assert");
 var moment = require("moment");
 var User_1 = require("../app/User");
-var PostRepository_1 = require("../app/PostRepository");
+var PostRepository_1 = require("../database/PostRepository");
 var Post_1 = require("../app/Post");
 var UserRepository_1 = require("../database/UserRepository");
 var Database_1 = require("../database/Database");

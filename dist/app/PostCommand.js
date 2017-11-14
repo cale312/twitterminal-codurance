@@ -16,19 +16,25 @@ var Post_1 = require("./Post");
 var Command_1 = require("./Command");
 var PostCommand = /** @class */ (function (_super) {
     __extends(PostCommand, _super);
-    function PostCommand() {
-        return _super.call(this) || this;
+    function PostCommand(userRepository, postRepository) {
+        var _this = _super.call(this) || this;
+        _this.userRepository = userRepository;
+        _this.postRepository = postRepository;
+        return _this;
     }
-    PostCommand.prototype.execute = function (input, userRepository, postRepository) {
-        if (input.verb === '->') {
-            var user = userRepository.findOne({ name: input.subject });
+    PostCommand.prototype.canExecute = function (input) {
+        return input.verb === '->';
+    };
+    PostCommand.prototype.execute = function (input) {
+        if (this.canExecute(input)) {
+            var user = this.userRepository.findOne({ name: input.subject });
             if (!user) {
                 user = new User_1.User(input.subject);
-                userRepository.store(user);
+                this.userRepository.store(user);
             }
-            return postRepository.store(new Post_1.Post({ text: input.object, author: user.name, createdAt: moment() }));
+            return this.postRepository.store(new Post_1.Post({ text: input.object, author: user.name, createdAt: moment() }));
         }
-        this.next(input, userRepository, postRepository);
+        this.next(input);
     };
     return PostCommand;
 }(Command_1.Command));
