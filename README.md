@@ -1,4 +1,4 @@
-# Twitterminal
+# Twitterminal [![Build Status](https://travis-ci.org/ggsbv/twitterminal-codurance.svg?branch=master)](https://travis-ci.org/ggsbv/twitterminal-codurance)
 
 Twitterminal is a Social Networking application that runs in the terminal. 
 
@@ -60,8 +60,9 @@ To view a User's Wall, simply input a User's username, followed by the word 'wal
 
 ## Future Plans
 
-* Setup for certain tests need to be refactored to a Factory function of sorts.
+* Setup for certain tests need to be refactored to a Factory function.
 * Test for and handle edge cases.
+* Improve typing once I have more experience with TypeScript.
 * Create a composer class of sorts that sits above Twitterminal that will handle linking all of
 Twitterminal's dependencies.
-* Continuously improve the program based on user feedback.
+* Improve the program based on user feedback.
