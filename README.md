@@ -14,7 +14,7 @@ Twitterminal is a Social Networking application that runs in the terminal.
 3. Navigate to the project root directory.
 4. Run ``` npm install ``` in the project root. This will install all dependencies that are included in the package.json
 5. Run ``` npm run twitterminal``` to start Twitterminal.
-6. Run ``` npm run test ``` to run the tests (Optional).
+6. Run ``` npm test ``` to run the tests and view coverage (Optional).
 
 ## Usage:
 
@@ -60,9 +60,14 @@ To view a User's Wall, simply input a User's username, followed by the word 'wal
 
 ## Future Plans
 
-* Setup for certain tests need to be refactored to a Factory function.
+* Setup for certain tests need to be refactored to a Factory.
 * Test for and handle edge cases.
-* Improve typing once I have more experience with TypeScript.
+* Typing can be improved once I have more experience with TypeScript.
 * Create a composer class of sorts that sits above Twitterminal that will handle linking all of
-Twitterminal's dependencies.
-* Improve the program based on user feedback.
+Twitterminal's dependencies. (The Commands should not be hardcoded in the constructor, but rather
+passed to Twitterminal after being composed.)
+* Replace all string return statuses with Exceptions or customised status objects. I would like
+to learn the correct way to structure such a flow. 
+* Test coverage should be 100%. With more experience, I will be able to find ways to test certain
+functions that I am currently struggling to figure out how to test.
+* Improve the program based on feedback. 
