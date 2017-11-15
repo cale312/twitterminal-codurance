@@ -10,6 +10,7 @@ import { Timeline } from "../app/Timeline";
 import { FollowCommand } from "../app/FollowCommand";
 import { WallCommand } from "../app/WallCommand";
 import { Wall } from "../app/Wall";
+import { User } from "../app/User";
 
 describe("The Twitterminal Class", () => {
 
@@ -105,5 +106,42 @@ describe("The Twitterminal Class", () => {
             "Sandro - Second post (a few seconds ago)"
         ]);
         // assert.equal(twitterminal.handleInput("Charne wall"), "Wall has been logged to the console.");
+    });
+
+    it("should return an error string if the command is not executed", () => {
+        let database = new Database();
+        let userRepository = new UserRepository(database);
+        let postRepository = new PostRepository(database);
+
+        let twitterminal = new Twitterminal(userRepository, postRepository);
+
+        assert.equal(twitterminal.handleInput("Sandro + donkey!!!!!!"), `You have entered an invalid command.
+        Read the documentation at github.com/ggsbv/twitterminal for more details.`);
+    });
+
+    it("should return the correct success string message when the corresponding command is executed", () => {
+        let database = new Database();
+        let userRepository = new UserRepository(database);
+        let postRepository = new PostRepository(database);
+
+        let twitterminal = new Twitterminal(userRepository, postRepository);
+
+        assert.equal(twitterminal.handleInput("Sandro + donkey!!!!!!"), `You have entered an invalid command.
+        Read the documentation at github.com/ggsbv/twitterminal for more details.`);
+
+        assert.equal(twitterminal.handleInput("Sandro -> First post."),
+            "Post has been saved to Sandro's account.");
+
+        assert.equal(twitterminal.handleInput("Andre -> First post."),
+            "Post has been saved to Andre's account.");
+
+        assert.equal(twitterminal.handleInput("Sandro"),
+            "Timeline has been logged to the console.");
+
+        assert.equal(twitterminal.handleInput("Sandro follows Andre"),
+            "Sandro has followed Andre.");
+
+        assert.equal(twitterminal.handleInput("Sandro wall"),
+            "Wall has been logged to the console.");
     });
 });

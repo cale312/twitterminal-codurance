@@ -19,9 +19,26 @@ describe("The PostCommand class", () => {
 
         let postCommand = new PostCommand(userRepository, postRepository);
 
-        postCommand.execute(input);
+        assert.equal(postCommand.execute(input), "Post has been saved to Sandro's account.");
 
         assert.equal(userRepository.findOne({ name: "Sandro" }).name, "Sandro");
-    })
+    });
+
+    it("should return an error message if the command could not be executed", () => {
+        let input = {
+            subject: "Sandro",
+            verb: "follows",
+            object: "Andre"
+        };
+
+        let database = new Database();
+        let userRepository = new UserRepository(database);
+        let postRepository = new PostRepository(database);
+
+        let postCommand = new PostCommand(userRepository, postRepository);
+
+        assert.equal(postCommand.execute(input),`You have entered an invalid command.
+        Read the documentation at github.com/ggsbv/twitterminal for more details.`);
+    });
 
 });

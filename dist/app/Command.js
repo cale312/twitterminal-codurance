@@ -8,8 +8,9 @@ var Command = /** @class */ (function () {
     };
     Command.prototype.next = function (input) {
         if (this.successor) {
-            this.successor.execute(input);
+            return this.successor.execute(input);
         }
+        return "You have entered an invalid command.\n        Read the documentation at github.com/ggsbv/twitterminal for more details.";
     };
     return Command;
 }());

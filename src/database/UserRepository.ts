@@ -5,7 +5,7 @@ import { User } from "../app/User";
 import { IRepository } from "./IRepository";
 import { IQuery } from "../app/IQuery";
 
-export class UserRepository implements IRepository {
+export class UserRepository implements IRepository<User> {
     database: Database;
 
     constructor(database: Database) {

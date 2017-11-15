@@ -2,11 +2,12 @@ import { Command } from "./Command";
 import { ISentence } from "./ISentence";
 import { IRepository } from "../database/IRepository";
 import { Timeline } from "./Timeline";
+import { User } from "./User";
 
 export class ReadCommand extends Command {
-    private userRepository: IRepository;
+    private userRepository: IRepository<User>;
 
-    constructor(userRepository: IRepository) {
+    constructor(userRepository: IRepository<User>) {
         super();
 
         this.userRepository = userRepository;
@@ -21,6 +22,6 @@ export class ReadCommand extends Command {
             return new Timeline(this.userRepository.findOne({ name: input.subject }).posts).display();
         }
 
-        this.next(input);
+        return this.next(input);
     }
 }

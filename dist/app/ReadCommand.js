@@ -26,7 +26,7 @@ var ReadCommand = /** @class */ (function (_super) {
         if (this.canExecute(input)) {
             return new Timeline_1.Timeline(this.userRepository.findOne({ name: input.subject }).posts).display();
         }
-        this.next(input);
+        return this.next(input);
     };
     return ReadCommand;
 }(Command_1.Command));

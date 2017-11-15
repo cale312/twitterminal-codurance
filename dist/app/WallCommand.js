@@ -26,7 +26,7 @@ var WallCommand = /** @class */ (function (_super) {
         if (this.canExecute(input)) {
             return new Wall_1.Wall(this.userRepository.findOne({ name: input.subject }), this.userRepository).display();
         }
-        this.next(input);
+        return this.next(input);
     };
     return WallCommand;
 }(Command_1.Command));

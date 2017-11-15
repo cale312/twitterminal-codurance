@@ -8,13 +8,15 @@ import { PostCommand } from "./PostCommand";
 import { ReadCommand } from "./ReadCommand";
 import { FollowCommand } from "./FollowCommand";
 import { WallCommand } from "./WallCommand";
+import { User } from "./User";
+import { Post } from "./Post";
 
 export class Twitterminal {
-    protected userRepository: IRepository;
-    protected postRepository: IRepository;
+    protected userRepository: IRepository<User>;
+    protected postRepository: IRepository<Post>;
     protected availableCommands: Array<Command>;
 
-    constructor(userRepository: IRepository, postRepository: IRepository) {
+    constructor(userRepository: IRepository<User>, postRepository: IRepository<Post>) {
         this.userRepository = userRepository;
         this.postRepository = postRepository;
 
@@ -42,11 +44,17 @@ export class Twitterminal {
     private inputAsSentence(input: string): ISentence {
         let inputAsArray = input.split(" ");
 
-        return {
-            subject: inputAsArray[0],
-            verb: inputAsArray[1],
-            object: inputAsArray.slice(2).join(" ")
-        }
+        let sentence: ISentence = {
+            subject: inputAsArray[0]
+        };
+
+        let verb = inputAsArray[1];
+        let object = inputAsArray.slice(2).join(" ");
+
+        if (verb) sentence["verb"] = inputAsArray[1];
+        if (object) sentence["object"] = inputAsArray.slice(2).join(" ");
+
+        return sentence;
     }
 
     private async prompt(): Promise<prompt<IUserInput>> {
@@ -62,12 +70,7 @@ export class Twitterminal {
         let sentence = this.inputAsSentence(input);
         let firstCommand = this.availableCommands[0];
 
-        try {
-            return firstCommand.execute(sentence);
-        } catch {
-            return `You have entered an invalid command. Read the documentation at
-             github.com/ggsbv/twitterminal for more details.`
-        }
+        return firstCommand.execute(sentence);
     }
 
     async start() {

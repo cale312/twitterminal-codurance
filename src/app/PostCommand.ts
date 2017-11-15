@@ -8,10 +8,10 @@ import { ISentence } from "./ISentence";
 import { IRepository } from "../database/IRepository";
 
 export class PostCommand extends Command {
-    private userRepository: IRepository;
-    private postRepository: IRepository;
+    private userRepository: IRepository<User>;
+    private postRepository: IRepository<Post>;
 
-    constructor(userRepository: IRepository, postRepository: IRepository) {
+    constructor(userRepository: IRepository<User>, postRepository: IRepository<Post>) {
         super();
 
         this.userRepository = userRepository;
@@ -34,6 +34,6 @@ export class PostCommand extends Command {
             return this.postRepository.store(new Post({ text: input.object, author: user.name, createdAt: moment() }));
         }
 
-        this.next(input);
+        return this.next(input);
     }
 }

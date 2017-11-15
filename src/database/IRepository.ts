@@ -1,8 +1,6 @@
-import { User } from "../app/User";
-import { Post } from "../app/Post";
 import { IQuery } from "../app/IQuery";
 
-export interface IRepository {
-    store(user?: User, post?: Post): string;
-    findOne(query: IQuery): string | undefined;
+export interface IRepository<T> {
+    store(data: T): string;
+    findOne(query: IQuery): T | undefined;
 }

@@ -26,7 +26,7 @@ var FollowCommand = /** @class */ (function (_super) {
             return this.userRepository.findOne({ name: input.subject })
                 .subscribeTo(this.userRepository.findOne({ name: input.object }));
         }
-        this.next(input);
+        return this.next(input);
     };
     return FollowCommand;
 }(Command_1.Command));

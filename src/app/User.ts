@@ -29,7 +29,7 @@ export class User {
         return `Post has been saved to ${this._name}'s account.`;
     }
 
-    subscribeTo(user: User) {
+    subscribeTo(user: User): string {
         this._subscribedTo.push(user.name);
 
         return `${this._name} has followed ${user.name}.`;

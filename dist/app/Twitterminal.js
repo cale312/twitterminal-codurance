@@ -63,11 +63,16 @@ var Twitterminal = /** @class */ (function () {
     // subject, verb and an object.
     Twitterminal.prototype.inputAsSentence = function (input) {
         var inputAsArray = input.split(" ");
-        return {
-            subject: inputAsArray[0],
-            verb: inputAsArray[1],
-            object: inputAsArray.slice(2).join(" ")
+        var sentence = {
+            subject: inputAsArray[0]
         };
+        var verb = inputAsArray[1];
+        var object = inputAsArray.slice(2).join(" ");
+        if (verb)
+            sentence["verb"] = inputAsArray[1];
+        if (object)
+            sentence["object"] = inputAsArray.slice(2).join(" ");
+        return sentence;
     };
     Twitterminal.prototype.prompt = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -83,12 +88,7 @@ var Twitterminal = /** @class */ (function () {
         this.setSuccessors(this.availableCommands);
         var sentence = this.inputAsSentence(input);
         var firstCommand = this.availableCommands[0];
-        try {
-            return firstCommand.execute(sentence);
-        }
-        catch (_a) {
-            return "You have entered an invalid command. Read the documentation at\n             github.com/ggsbv/twitterminal for more details.";
-        }
+        return firstCommand.execute(sentence);
     };
     Twitterminal.prototype.start = function () {
         return __awaiter(this, void 0, void 0, function () {

@@ -2,11 +2,12 @@ import { Command } from "./Command";
 import { ISentence } from "./ISentence";
 import { IRepository } from "../database/IRepository";
 import { Wall } from "./Wall";
+import { User } from "./User";
 
 export class WallCommand extends Command {
-    private userRepository: IRepository;
+    private userRepository: IRepository<User>;
 
-    constructor(userRepository: IRepository) {
+    constructor(userRepository: IRepository<User>) {
         super();
 
         this.userRepository = userRepository;
@@ -21,6 +22,6 @@ export class WallCommand extends Command {
             return new Wall(this.userRepository.findOne({ name: input.subject }), this.userRepository).display();
         }
 
-        this.next(input);
+        return this.next(input);
     }
 }

@@ -34,7 +34,7 @@ var PostCommand = /** @class */ (function (_super) {
             }
             return this.postRepository.store(new Post_1.Post({ text: input.object, author: user.name, createdAt: moment() }));
         }
-        this.next(input);
+        return this.next(input);
     };
     return PostCommand;
 }(Command_1.Command));

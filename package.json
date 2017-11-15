@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/ts-mocha ./src/test/*",
+    "test": "nyc --reporter=html --reporter=text ./node_modules/.bin/ts-mocha ./dist/test/*",
     "twitterminal": "node ./dist/app/main.js"
   },
   "keywords": [],
@@ -14,6 +14,7 @@
     "@types/mocha": "^2.2.44",
     "@types/node": "^8.0.50",
     "mocha": "^4.0.1",
+    "nyc": "^11.3.0",
     "ts-mocha": "^1.0.3",
     "typescript": "^2.6.1"
   },

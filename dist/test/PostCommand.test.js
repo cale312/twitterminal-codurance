@@ -16,7 +16,19 @@ describe("The PostCommand class", function () {
         var userRepository = new UserRepository_1.UserRepository(database);
         var postRepository = new PostRepository_1.PostRepository(database);
         var postCommand = new PostCommand_1.PostCommand(userRepository, postRepository);
-        postCommand.execute(input);
+        assert.equal(postCommand.execute(input), "Post has been saved to Sandro's account.");
         assert.equal(userRepository.findOne({ name: "Sandro" }).name, "Sandro");
+    });
+    it("should return an error message if the command could not be executed", function () {
+        var input = {
+            subject: "Sandro",
+            verb: "follows",
+            object: "Andre"
+        };
+        var database = new Database_1.Database();
+        var userRepository = new UserRepository_1.UserRepository(database);
+        var postRepository = new PostRepository_1.PostRepository(database);
+        var postCommand = new PostCommand_1.PostCommand(userRepository, postRepository);
+        assert.equal(postCommand.execute(input), "You have entered an invalid command.\n        Read the documentation at github.com/ggsbv/twitterminal for more details.");
     });
 });

@@ -7,7 +7,7 @@ import { IRepository } from "../database/IRepository";
 export class Wall implements IOutput {
     private _posts: Array<string>;
 
-    constructor(user: User, userRepository: IRepository) {
+    constructor(user: User, userRepository: IRepository<User>) {
         let posts = [];
 
         posts.push(user.posts);

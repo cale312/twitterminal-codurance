@@ -78,4 +78,23 @@ describe("The Twitterminal Class", function () {
         ]);
         // assert.equal(twitterminal.handleInput("Charne wall"), "Wall has been logged to the console.");
     });
+    it("should return an error string if the command is not executed", function () {
+        var database = new Database_1.Database();
+        var userRepository = new UserRepository_1.UserRepository(database);
+        var postRepository = new PostRepository_1.PostRepository(database);
+        var twitterminal = new Twitterminal_1.Twitterminal(userRepository, postRepository);
+        assert.equal(twitterminal.handleInput("Sandro + donkey!!!!!!"), "You have entered an invalid command.\n        Read the documentation at github.com/ggsbv/twitterminal for more details.");
+    });
+    it("should return the correct success string message when the corresponding command is executed", function () {
+        var database = new Database_1.Database();
+        var userRepository = new UserRepository_1.UserRepository(database);
+        var postRepository = new PostRepository_1.PostRepository(database);
+        var twitterminal = new Twitterminal_1.Twitterminal(userRepository, postRepository);
+        assert.equal(twitterminal.handleInput("Sandro + donkey!!!!!!"), "You have entered an invalid command.\n        Read the documentation at github.com/ggsbv/twitterminal for more details.");
+        assert.equal(twitterminal.handleInput("Sandro -> First post."), "Post has been saved to Sandro's account.");
+        assert.equal(twitterminal.handleInput("Andre -> First post."), "Post has been saved to Andre's account.");
+        assert.equal(twitterminal.handleInput("Sandro"), "Timeline has been logged to the console.");
+        assert.equal(twitterminal.handleInput("Sandro follows Andre"), "Sandro has followed Andre.");
+        assert.equal(twitterminal.handleInput("Sandro wall"), "Wall has been logged to the console.");
+    });
 });

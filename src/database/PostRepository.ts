@@ -8,7 +8,8 @@ import { Post } from "../app/Post";
 import { User } from "../app/User";
 import { IQuery } from "../app/IQuery";
 
-export class PostRepository implements IRepository {
+
+export class PostRepository implements IRepository<Post> {
     database: Database;
 
     constructor(database: Database) {
@@ -23,15 +24,15 @@ export class PostRepository implements IRepository {
         try {
             return find(this.database.data, user => user.name === post.author).post(post);
         } catch {
-            return `Error, could not save Post to ${post.author}`;
+            return `Error, could not save Post.`;
         }
     }
 
-    find(query: any): Array<Post> {
-        return filter(this.allPosts(), post => query);
-    }
+    // find(query: any): Array<Post> {
+    //     return filter(this.allPosts(), post => query);
+    // }
 
-    findOne(query: any): Post | undefined {
+    findOne(query: IQuery): Post | undefined {
         return find(this.allPosts(), post => query);
     }
 }

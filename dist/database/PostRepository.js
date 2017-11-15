@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var find = require("lodash.find");
-var filter = require("lodash.filter");
 var flattenDeep = require("lodash.flattendeep");
 var PostRepository = /** @class */ (function () {
     function PostRepository(database) {
@@ -15,12 +14,12 @@ var PostRepository = /** @class */ (function () {
             return find(this.database.data, function (user) { return user.name === post.author; }).post(post);
         }
         catch (_a) {
-            return "Error, could not save Post to " + post.author;
+            return "Error, could not save Post.";
         }
     };
-    PostRepository.prototype.find = function (query) {
-        return filter(this.allPosts(), function (post) { return query; });
-    };
+    // find(query: any): Array<Post> {
+    //     return filter(this.allPosts(), post => query);
+    // }
     PostRepository.prototype.findOne = function (query) {
         return find(this.allPosts(), function (post) { return query; });
     };

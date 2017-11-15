@@ -1,11 +1,12 @@
 import { Command } from "./Command";
 import { IRepository } from "../database/IRepository";
 import { ISentence } from "./ISentence";
+import { User } from "./User";
 
 export class FollowCommand extends Command {
-    private userRepository: IRepository;
+    private userRepository: IRepository<User>;
 
-    constructor(userRepository: IRepository) {
+    constructor(userRepository: IRepository<User>) {
         super();
 
         this.userRepository = userRepository;
@@ -21,6 +22,6 @@ export class FollowCommand extends Command {
                 .subscribeTo(this.userRepository.findOne({ name: input.object }));
         }
 
-        this.next(input);
+        return this.next(input);
     }
 }
