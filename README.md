@@ -6,6 +6,8 @@ Twitterminal is a Social Networking application that runs in the terminal.
 ## Prerequisites
 
 * [Node & npm](https://nodejs.org/en/) must be installed.
+* Node version must be greater than v8.6.0
+* Npm version must be greater than 5.5.1
 
 ## Installation
 
